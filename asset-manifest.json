@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/ChipRose/cat-cafe.git/static/css/main.ca96793b.css",
+    "main.js": "/ChipRose/cat-cafe.git/static/js/main.09181d40.js",
+    "static/media/lucky@2x.jpg": "/ChipRose/cat-cafe.git/static/media/lucky@2x.ea261aeae2679e5a6ba2.jpg",
+    "static/media/lucky.jpg": "/ChipRose/cat-cafe.git/static/media/lucky.347a14a39c5c5588d4be.jpg",
+    "static/media/in-a-chair.svg": "/ChipRose/cat-cafe.git/static/media/in-a-chair.181c8fd1c13e4584d9c81535543a722c.svg",
+    "static/media/paw.svg": "/ChipRose/cat-cafe.git/static/media/paw.e050c5a0b7bddff2b6a1.svg",
+    "static/media/logo.svg": "/ChipRose/cat-cafe.git/static/media/logo.346c6c12282df299a8bd80c9c562d834.svg",
+    "static/media/leaves.svg": "/ChipRose/cat-cafe.git/static/media/leaves.1e0a1a53025d1da7fad7.svg",
+    "index.html": "/ChipRose/cat-cafe.git/index.html",
+    "static/media/map-flag.svg": "/ChipRose/cat-cafe.git/static/media/map-flag.7907e326baab4d05b17d52489baaeffa.svg",
+    "static/media/shape.svg": "/ChipRose/cat-cafe.git/static/media/shape.f6ee057ff0d791f1227f.svg",
+    "main.ca96793b.css.map": "/ChipRose/cat-cafe.git/static/css/main.ca96793b.css.map",
+    "main.09181d40.js.map": "/ChipRose/cat-cafe.git/static/js/main.09181d40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca96793b.css",
+    "static/js/main.09181d40.js"
+  ]
+}
