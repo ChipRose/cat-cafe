@@ -22,9 +22,9 @@ const StyledButton = styled.button`
   }
 `;
 
-function Button({ children, minWidth }) {
+function Button({ children, minWidth, className }) {
   return (
-    <StyledButton type="button" width={`${minWidth}px`}>
+    <StyledButton type="button" width={`${minWidth}px`} className={className}>
       {children}
     </StyledButton>
   );

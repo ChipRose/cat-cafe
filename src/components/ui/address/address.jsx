@@ -1,23 +1,37 @@
-import AddressIcon from "../../../assets/icons/map-flag.svg";
+import styled from "styled-components";
 
-import "./style.css";
+import AddressIcn from "../../../assets/icons/map-flag.svg";
+
+const StyledAddress = styled.address`
+  display: flex;
+  font-style: normal;
+`;
+
+const AddressImageBlock = styled.div`
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+`;
+
+const AddressIcon = styled.img`
+  max-width: 100%;
+`;
 
 function Address() {
   return (
-    <address className="address">
-      <div className="address__image-block">
-        <img
-          className="address__icon"
+    <StyledAddress>
+      <AddressImageBlock>
+        <AddressIcon
           width="16"
           height="17"
-          src={AddressIcon}
+          src={AddressIcn}
           alt="Указаталь адреса"
         />
-      </div>
-      <span className="address__text">
+      </AddressImageBlock>
+      <span>
         Санкт-Петербург, набережная реки Карповки, дом 5, литера П
       </span>
-    </address>
+    </StyledAddress>
   );
 }
 

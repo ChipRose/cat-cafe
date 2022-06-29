@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Title from "../title/title";
 
 const Card = styled.article`
-width: 353px;
+width:353px;
 height: 100%;
 padding: 20px;
 box-sizing: border-box;
@@ -21,14 +21,14 @@ background: rgba(255, 255, 255, 1);
 }
 `;
 
-const ImageBlock = styled.div`
+const CardImageBlock = styled.div`
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
 `;
 
-const Img = styled.picture`
+const CardImg = styled.picture`
   width: 100%;
   height: 313px;
   object-fit: contain;
@@ -38,7 +38,7 @@ const CardTitle = styled(Title)`
   margin: 0 0 12px;
 `;
 
-const Text = styled.p`
+const CardText = styled.p`
   margin: 0 0 10px;
   &:last-child {
     margin-bottom:0;
@@ -50,8 +50,8 @@ function StarCard({ star }) {
 
   return (
     <Card tabIndex={id}>
-      <ImageBlock>
-        <Img>
+      <CardImageBlock>
+        <CardImg>
           <img
             src={process.env.PUBLIC_URL + `${image}`}
             srcSet={process.env.PUBLIC_URL + `${image2x} 2x`}
@@ -59,17 +59,17 @@ function StarCard({ star }) {
             height={313}
             alt={alt}
           />
-        </Img>
+        </CardImg>
         {/* <StarSticker/> */}
-      </ImageBlock>
-      <div className="star-card__text-block">
-        <CardTitle level={3} size={32} className="star-card__title">
+      </CardImageBlock>
+      <div>
+        <CardTitle level={3} size={32}>
           {name}
         </CardTitle>
-        <div className="star-card__info">
-          <Text>
+        <div>
+          <CardText>
             {about}
-          </Text>
+          </CardText>
         </div>
       </div>
     </Card>

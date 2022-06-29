@@ -1,14 +1,18 @@
+import styled from "styled-components";
+
 import About from "../../blocks/about/about";
 import StarsList from "../../blocks/stars-list/stars-list";
 
-import "./style.css";
+const StyledPage = styled.main`
+  flex: 1 1 auto;
+`;
 
 function MainPage() {
   return (
-    <main className="main-page">
+    <StyledPage>
       <About/>
       <StarsList/>
-    </main>
+    </StyledPage>
   );
 }
 

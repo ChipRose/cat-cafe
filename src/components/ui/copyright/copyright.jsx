@@ -1,7 +1,17 @@
-import "./style.css";
+import styled from "styled-components";
+
+const StyledCopyright = styled.p`
+  min-width: 146px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: rgba(255, 246, 217, 1);
+`;
 
 function Copyright() {
-  return <p className="copyright">Создано 2021</p>;
+  return <StyledCopyright>Создано 2021</StyledCopyright>;
 }
 
 export default Copyright;
