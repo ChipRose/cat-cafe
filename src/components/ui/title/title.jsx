@@ -1,16 +1,18 @@
-import getClasses from "../../../util/join-classes";
+import styled from "styled-components";
 
-import "./style.css";
-
-function Title({ level, size, className, children }) {
-  const CustomTitleTag = `h${level}`;
+function Title({ level, size, children, className }) {
+  const StyledTitle = styled[`h${level}`]`
+    margin-top: 0;
+    padding: 0;
+    font-size: ${(props)=>props.fontSize};
+    font-weight: 700;
+    line-height: 115%;
+  `;
 
   return (
-    <CustomTitleTag
-      className={getClasses(["title", `title__${size}`, className])}
-    >
+    <StyledTitle fontSize={`${size}px`} className={className}>
       {children}
-    </CustomTitleTag>
+    </StyledTitle>
   );
 }
 
