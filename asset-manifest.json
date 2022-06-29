@@ -1,21 +1,16 @@
 {
   "files": {
-    "main.css": "/cat-cafe/static/css/main.3e16cd0d.css",
-    "main.js": "/cat-cafe/static/js/main.99a2cc29.js",
-    "static/media/lucky@2x.jpg": "/cat-cafe/static/media/lucky@2x.ea261aeae2679e5a6ba2.jpg",
-    "static/media/lucky.jpg": "/cat-cafe/static/media/lucky.347a14a39c5c5588d4be.jpg",
+    "main.css": "/cat-cafe/static/css/main.1b297043.css",
+    "main.js": "/cat-cafe/static/js/main.97dadd52.js",
     "static/media/in-a-chair.svg": "/cat-cafe/static/media/in-a-chair.181c8fd1c13e4584d9c81535543a722c.svg",
-    "static/media/paw.svg": "/cat-cafe/static/media/paw.e050c5a0b7bddff2b6a1.svg",
     "static/media/logo.svg": "/cat-cafe/static/media/logo.346c6c12282df299a8bd80c9c562d834.svg",
-    "static/media/leaves.svg": "/cat-cafe/static/media/leaves.1e0a1a53025d1da7fad7.svg",
     "static/media/map-flag.svg": "/cat-cafe/static/media/map-flag.7907e326baab4d05b17d52489baaeffa.svg",
     "index.html": "/cat-cafe/index.html",
-    "static/media/shape.svg": "/cat-cafe/static/media/shape.f6ee057ff0d791f1227f.svg",
-    "main.3e16cd0d.css.map": "/cat-cafe/static/css/main.3e16cd0d.css.map",
-    "main.99a2cc29.js.map": "/cat-cafe/static/js/main.99a2cc29.js.map"
+    "main.1b297043.css.map": "/cat-cafe/static/css/main.1b297043.css.map",
+    "main.97dadd52.js.map": "/cat-cafe/static/js/main.97dadd52.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e16cd0d.css",
-    "static/js/main.99a2cc29.js"
+    "static/css/main.1b297043.css",
+    "static/js/main.97dadd52.js"
   ]
 }
