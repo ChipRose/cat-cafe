@@ -4,13 +4,13 @@ import Logo from "../../ui/logo/logo";
 import Copyright from "../../ui/copyright/copyright";
 
 const StyledFooter = styled.footer`
-  background: rgba(255, 255, 255, 1);
+  background: ${(props)=>props.theme.contrastBgColor};
 `;
 
 const FooterContainer = styled.div`
-  width: 1140px;
+  width: ${(props)=>props.theme.appWidth};
   margin: 0 auto;
-  padding: 19px 20px;
+  padding: 19px ${(props)=>props.theme.indent};
   box-sizing: border-box;
   display: flex;
   align-items: center;

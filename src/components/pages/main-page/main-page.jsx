@@ -1,17 +1,15 @@
-import styled from "styled-components";
-
 import About from "../../blocks/about/about";
 import StarsList from "../../blocks/stars-list/stars-list";
+import FormNew from "../../blocks/form-new/form-new";
 
-const StyledPage = styled.main`
-  flex: 1 1 auto;
-`;
+import { StyledPage } from "./style";
 
 function MainPage() {
   return (
     <StyledPage>
-      <About/>
-      <StarsList/>
+      <About />
+      <StarsList />
+      <FormNew />
     </StyledPage>
   );
 }

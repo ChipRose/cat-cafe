@@ -1,14 +1,19 @@
+import React, { useState } from 'react';
+
+import theme from '../../theme/theme.js';
 import starsData from '../../mocks/stars-data.js';
 import CatInfoContext from '../../util/context.js';
 import PageWrapper from '../layout/page-wrapper/page-wrapper';
-
-import './style.css';
+import { ThemeProvider } from 'styled-components';
 
 function App() {
+  const [starsInfo, setStarInfo] = useState(starsData);
   return (
-    <CatInfoContext.Provider value={{starsData}}>
-      <PageWrapper />
-    </CatInfoContext.Provider>
+    <ThemeProvider theme={theme}>
+      <CatInfoContext.Provider value={{starsInfo}}>
+        <PageWrapper />
+      </CatInfoContext.Provider>
+    </ThemeProvider>
   );
 }
 
