@@ -17,6 +17,7 @@ const StyledListContainer = styled.div`
   padding: 100px 20px 80px;
   margin: 0 auto;
   box-sizing: border-box;
+  position:relative;
   display: flex;
   flex-direction: column;
   align-items: center;

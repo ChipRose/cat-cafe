@@ -2,6 +2,7 @@ import React from "react";
 
 import CardList from '../../layout/cards-list/card-list';
 import Button from "../../ui/button/button";
+import FormNew from '../form-new/form-new';
 
 import { StyledStarsList, StyledListContainer, StyledListTitle } from "./style";
 
@@ -16,7 +17,8 @@ function StarsList() {
         <CardList />
         <Button minWidth={353}>
           {"Добавить кота"}
-        </Button>
+        </Button>  
+        <FormNew isShow={true} />
       </StyledListContainer>
     </StyledStarsList>
   );

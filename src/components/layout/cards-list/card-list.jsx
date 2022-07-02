@@ -9,8 +9,8 @@ function CardList() {
   return (
     <StyledList>
       {
-        stars &&
-        stars.map((star) => (
+        stars.starsInfo &&
+        stars.starsInfo.map((star) => (
           <StyledItem key={star.id}>
             <StarCard star={star} />
           </StyledItem>

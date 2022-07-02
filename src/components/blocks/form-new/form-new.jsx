@@ -1,34 +1,56 @@
 import React, { useState } from "react";
 
-import { useAddInfoStars } from '../../../context/stars-context';
+import { useInfoStars } from '../../../context/stars-context';
 import Button from "../../ui/button/button";
 
-import { StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea } from "./style";
+import { StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea } from "./style";
 
-function FormNew() {
+function FormNew({ isShow }) {
 
-  const addCard = useAddInfoStars();
-  const [newStar, setStars] = useState('');
+  const { addCard } = useInfoStars();
+  const [starName, setStarName] = useState('');
+  const [aboutText, setAboutText] = useState('');
 
-  return (
-    <StyledForm>
-      <StyledInputBlock>
-        <input type="file" accept="image/png, image/jpeg"></input>
-        <StyledNameInput
-          type="text"
-          placeholder="Кличка кота"
-          value={newStar}
-          onChange={evt => setStars(evt.target.value)}
-          onKeyPress={evt => addCard(evt.key, newStar)}
-        />
-        <StyledTextarea placeholder="Напишите пару слов" />
-      </StyledInputBlock>
-      <StyledFieldset>
-        <Button type="submit">{"Сохранить"}</Button>
-        <Button type="reset">{"Отменить"}</Button>
-      </StyledFieldset>
-    </StyledForm>
-  );
+  const isButtonEnable = starName && aboutText;
+
+  return isShow ? (
+    <StyledFormWrapper>
+      <StyledForm
+        onSubmit={evt => {
+          evt.preventDefault();
+          addCard({ starName, aboutText })
+          setStarName('');
+          setAboutText('');
+        }}
+      >
+        <StyledInputBlock>
+          <input type="file" accept="image/png, image/jpeg"></input>
+          <StyledNameInput
+            type="text"
+            placeholder="Кличка кота"
+            name="name"
+            value={starName}
+            onChange={evt => setStarName(evt.target.value)}
+          />
+          <StyledTextarea
+            placeholder="Напишите пару слов"
+            name="about"
+            value={aboutText}
+            onChange={evt => setAboutText(evt.target.value)}
+          />
+        </StyledInputBlock>
+        <StyledFieldset>
+          <Button
+            type="submit"
+            disabled={!isButtonEnable}
+          >
+            {"Сохранить"}
+          </Button>
+          <Button type="reset">{"Отменить"}</Button>
+        </StyledFieldset>
+      </StyledForm>
+    </StyledFormWrapper>
+  ) : null;
 };
 
 export default FormNew;

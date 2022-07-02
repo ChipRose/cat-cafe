@@ -23,6 +23,7 @@ const theme = {
     shadow: "rgba(0, 0, 0, 0.14)",
   },
   borderRadius: "8px",
+  mainShadow: "0 0 10px 2px rgba(0, 0, 0, 0.3)",
 };
 
 export default theme;

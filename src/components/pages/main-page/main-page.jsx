@@ -9,7 +9,6 @@ function MainPage() {
     <StyledPage>
       <About />
       <StarsList  />
-      <FormNew />
     </StyledPage>
   );
 }

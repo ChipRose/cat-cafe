@@ -1,14 +1,28 @@
 import styled, {css} from "styled-components";
 
-const StyledForm = styled.section`
+const StyledFormWrapper = styled.div`
   width: 800px;
-  min-height: 500px;
+  height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const StyledForm = styled.form.attrs(()=>({
+  method: "post",
+  action: "#",
+  enctype: "multipart/form-data",
+}))`
   padding: ${(props)=>props.theme.indent};
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: ${(props)=>props.theme.bgColor.contrast};
   border-radius: ${(props)=>props.theme.borderRadius};
+  box-shadow: ${(props)=>props.theme.mainShadow};
 `;
 
 const StyledFieldset = styled.fieldset`
@@ -50,4 +64,4 @@ const StyledTextarea = styled.textarea`
   resize: none;
 `;
 
-export {StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea};
+export {StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea};
