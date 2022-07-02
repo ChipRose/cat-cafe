@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Title from "../../ui/title/title";
 
 const StyledStarsList = styled.section`
-  background: rgba(255, 238, 173, 1);
+  background: ${(props)=>props.theme.bgColor.accent};
   background-image: url("${process.env.PUBLIC_URL}/img/bg/paw.svg"),
   url("${process.env.PUBLIC_URL}/img/bg/shape.svg"),
   url("${process.env.PUBLIC_URL}/img/bg/leaves.svg");
@@ -27,22 +27,4 @@ const StyledListTitle = styled(Title)`
   text-align: center;
 `;
 
-const StyledList = styled.ul`
-  margin: 0 0 24px;
-  padding: 0;
-  flex: 1 1 auto;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-`;
-
-const StyledItem = styled.li`
-  margin-right: 20px;
-  margin-bottom: 20px;
-  flex: 0 0 353px;
-  &:nth-child(3n) {
-    margin-right: 0;
-  }
-`;
-
-export { StyledStarsList, StyledListContainer, StyledListTitle, StyledList, StyledItem }; 
+export { StyledStarsList, StyledListContainer, StyledListTitle }; 

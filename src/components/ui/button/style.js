@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   font-size: 18px;
   line-height: 27px;
   font-weight: 700;
-  color: ${(props) => props.theme.contrastTxtColor};
+  color: ${(props) => props.theme.txtColor.contrast};
   background: ${(props) => props.theme.buttonBgColor.default};
   transition: all 0.3s ease-out;
   &:hover {

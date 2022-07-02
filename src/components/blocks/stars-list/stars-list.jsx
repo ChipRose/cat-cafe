@@ -1,30 +1,19 @@
-import React, {useContext} from "react";
+import React from "react";
 
-import CatInfoContext from "../../../util/context";
-import StarCard from "../../ui/star-card/star-card";
+import CardList from '../../layout/cards-list/card-list';
 import Button from "../../ui/button/button";
 
-import {StyledStarsList, StyledListContainer, StyledListTitle, StyledList, StyledItem} from "./style"; 
+import { StyledStarsList, StyledListContainer, StyledListTitle } from "./style";
 
 function StarsList() {
-  const {starsInfo} = useContext(CatInfoContext);
 
   return (
     <StyledStarsList>
       <StyledListContainer>
-        <StyledListTitle  level={2} size={36} >
+        <StyledListTitle level={2} size={36} >
           {"Наши звезды"}
         </StyledListTitle>
-        <StyledList>
-          {
-            starsInfo &&
-            starsInfo.map((star)=>(
-              <StyledItem key={star.id}>
-                <StarCard star={star} />
-              </StyledItem>
-            ))
-          }
-        </StyledList>
+        <CardList />
         <Button minWidth={353}>
           {"Добавить кота"}
         </Button>

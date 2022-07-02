@@ -8,7 +8,7 @@ function MainPage() {
   return (
     <StyledPage>
       <About />
-      <StarsList />
+      <StarsList  />
       <FormNew />
     </StyledPage>
   );
