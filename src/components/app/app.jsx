@@ -1,14 +1,22 @@
-import starsData from '../../mocks/stars-data.js';
-import CatInfoContext from '../../util/context.js';
+import React from 'react';
+
+import theme from '../../theme/theme.js';
 import PageWrapper from '../layout/page-wrapper/page-wrapper';
 
-import './style.css';
+import { StarProvider } from '../../context/stars-context';
+import { GlobalStyle } from './style.js';
+import { ThemeProvider } from 'styled-components';
+
+export const InfoContext =  React.createContext();
 
 function App() {
   return (
-    <CatInfoContext.Provider value={{starsData}}>
-      <PageWrapper />
-    </CatInfoContext.Provider>
+    <ThemeProvider theme={theme}>
+      <StarProvider>
+        <GlobalStyle />
+        <PageWrapper />
+      </StarProvider>
+    </ThemeProvider>
   );
 }
 

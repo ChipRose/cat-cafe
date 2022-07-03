@@ -7,7 +7,7 @@ function PageWrapper() {
   return (
     <>
       <Header />
-      <MainPage/>
+      <MainPage />
       <Footer />
     </>
   );
