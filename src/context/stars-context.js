@@ -12,12 +12,13 @@ function StarProvider({ children }) {
   const [stars, setStars] = useState(starsData);
 
   const addCard = (star) => {
-    const {starName, aboutText} = star;
+    const {starName, aboutText, starPhoto} = star;
     setStars([
       ...stars, {
         id: stars.length,
         name: starName,
         about: aboutText,
+        image: starPhoto,
       }
     ])
   };
