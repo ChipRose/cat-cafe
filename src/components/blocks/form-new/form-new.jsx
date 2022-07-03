@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import clip from "../../../assets/icons/clip.svg";
+import doc from "../../../assets/icons/doc.svg";
 import { useInfoStars } from '../../../context/stars-context';
 import Button from "../../ui/button/button";
 
@@ -63,7 +64,7 @@ function FormNew({ isShow, onClose }) {
               />
             </NewFormLabel>
             <StyledPreview>
-              <img src={starPhoto}></img>
+              <img src={starPhoto||doc}></img>
             </StyledPreview>
           </NewFormInputFileWrapper>
           <StyledNameInput
