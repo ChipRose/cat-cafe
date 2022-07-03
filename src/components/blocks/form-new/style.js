@@ -1,4 +1,5 @@
 import styled, {css} from "styled-components";
+import Button from '../../ui/button/button';
 
 const StyledFormWrapper = styled.div`
   width: 800px;
@@ -64,4 +65,8 @@ const StyledTextarea = styled.textarea`
   resize: none;
 `;
 
-export {StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea};
+const FormSubmitButton = styled(Button)`
+  margin-right: 20px;
+`;
+
+export {StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea, FormSubmitButton};
