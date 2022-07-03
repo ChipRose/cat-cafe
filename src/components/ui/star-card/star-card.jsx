@@ -10,8 +10,8 @@ function StarCard({ star }) {
       <CardImageBlock>
         <CardImg>
           <img
-            src={process.env.PUBLIC_URL + `${image}`}
-            srcSet={process.env.PUBLIC_URL + `${image2x} 2x`}
+            src={image}
+            //srcSet={image2x}
             width={313}
             height={313}
             alt={alt}

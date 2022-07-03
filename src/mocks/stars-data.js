@@ -4,8 +4,8 @@ const starsData = [
     name: "Кот Лаки",
     about:
       "Крайне спокойный, ласковый малыш, который медленно, но уверенно перестаёт быть робким скромнягой.",
-    image: "/img/stars/lucky.jpg",
-    image2x: "/img/stars/lucky@2x.jpg",
+    image: process.env.PUBLIC_URL + "/img/stars/lucky.jpg",
+    image2x: process.env.PUBLIC_URL + "/img/stars/lucky@2x.jpg",
     alt: "Полосатый кот с желтым платком на шее",
     feature: "new"
   },
@@ -14,8 +14,8 @@ const starsData = [
     name: "Кот Базилио",
     about:
       "Прошлые хозяева отказались от него, и долгое время ему пришлось быть на передержке, привыкая к новой жизни.",
-    image: "/img/stars/basilio.jpg",
-    image2x: "/img/stars/basilio@2x.jpg",
+    image: process.env.PUBLIC_URL + "/img/stars/basilio.jpg",
+    image2x: process.env.PUBLIC_URL + "/img/stars/basilio@2x.jpg",
     alt: "Полосатый кот, облизывающий мордочку",
     feature: "empty"
   },
@@ -24,8 +24,8 @@ const starsData = [
     name: "Кошка Сью",
     about:
       "Эта юная красавица очень общительная и ласковая уже с первого дня, как приехала в кафе.",
-    image: "/img/stars/sue.jpg",
-    image2x: "/img/stars/basilio@2x.jpg",
+    image: process.env.PUBLIC_URL + "/img/stars/sue.jpg",
+    image2x: process.env.PUBLIC_URL + "/img/stars/sue@2x.jpg",
     alt: "Серая кошка с загнутыми ушами",
     feature: "soft"
   }

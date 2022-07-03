@@ -15,7 +15,7 @@ background: ${(props)=>props.theme.bgColor.contrast};
   box-shadow: ${(props)=>props.theme.mainShadow};
 }
 &:focus, &:active {
-  outline: 3px solid rgba(255, 115, 43, 1);
+  outline: ${(props)=>props.theme.outline.card};
   box-shadow: ${(props)=>props.theme.mainShadow};
 }
 `;

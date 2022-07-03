@@ -3,7 +3,7 @@ import Button from '../../ui/button/button';
 
 const StyledFormWrapper = styled.div`
   width: 800px;
-  height: 500px;
+  min-height: 500px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -39,6 +39,61 @@ const StyledInputBlock = styled(StyledFieldset)`
   flex-direction: column;
 `;
 
+const StyledInputFileWrapper = styled.div`
+  display: flex;
+`;
+
+const NewFormInputFileWrapper = styled(StyledInputFileWrapper)`
+  margin-bottom: 20px;
+`;
+
+const StyledInputFile = styled.input`
+  outline:0;
+  opacity:0;
+  pointer-events:none;
+  user-select:none;
+`;
+
+const StyledInputFileLabel = styled.label`
+  width: 160px;
+  height: 140px;
+  display: block;
+  padding: ${(props)=>props.theme.indent};
+  box-sizing: border-box;
+  align-self: center;
+  font-size: 14px;
+  text-align:center;
+  color: grey;
+  background: ${(props)=>props.theme.inputBgColor.main};
+  border-radius: ${(props)=>props.theme.borderRadius};
+  cursor: pointer;
+  &:hover {
+    color: rgba(0,0,0,1);
+    outline: ${(props)=>props.theme.outline.main}
+  }
+`;
+
+const NewFormLabel = styled(StyledInputFileLabel)`
+  margin-right: 20px;
+`;
+
+const StyledInputFileText = styled.p`
+  margin: 0;
+`;
+
+const StyledPreview = styled.div`
+  display:flex;
+  justify-content: center;
+  align-item: center;
+  border-radius:  ${(props)=>props.theme.borderRadius};
+  overflow: hidden;
+  img {
+    width: 160px;
+    height: 140px;
+    object-fit: cover;
+  }
+`;
+
 const StyledField = css`
   padding: 15px;
   box-sizing: border-box;
@@ -65,8 +120,25 @@ const StyledTextarea = styled.textarea`
   resize: none;
 `;
 
+const NewFormTextarea = styled(StyledTextarea)`
+  margin-bottom: 20px;
+`;
+
 const FormSubmitButton = styled(Button)`
   margin-right: 20px;
 `;
 
-export {StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea, FormSubmitButton};
+export {
+  StyledFormWrapper, 
+  StyledForm, 
+  StyledInputBlock,
+  StyledFieldset, 
+  NewFormInputFileWrapper,
+  StyledInputFile, 
+  StyledInputFileText,
+  NewFormLabel, 
+  StyledPreview,
+  StyledNameInput, 
+  NewFormTextarea, 
+  FormSubmitButton
+};
