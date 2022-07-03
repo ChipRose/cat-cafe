@@ -5,8 +5,7 @@ import Button from "../../ui/button/button";
 
 import { StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea, FormSubmitButton } from "./style";
 
-function FormNew({ isShow }) {
-
+function FormNew({ isShow, onClose }) {
   const { addCard } = useInfoStars();
   const [starPhoto, setStarPhoto] = useState('');
   const [starName, setStarName] = useState('');
@@ -25,12 +24,12 @@ function FormNew({ isShow }) {
         }}
       >
         <StyledInputBlock>
-          <input 
+          <input
             type="file"
             accept="image/png, image/jpeg"
             name="image"
             files={starPhoto}
-            onChange={()=>{
+            onChange={() => {
               const reader = new FileReader();
             }}
           />
@@ -55,7 +54,11 @@ function FormNew({ isShow }) {
           >
             {"Сохранить"}
           </FormSubmitButton>
-          <Button type="reset">{"Отменить"}</Button>
+          <Button
+            type="reset"
+            onClick={onClose}
+          >{"Отменить"}
+          </Button>
         </StyledFieldset>
       </StyledForm>
     </StyledFormWrapper>

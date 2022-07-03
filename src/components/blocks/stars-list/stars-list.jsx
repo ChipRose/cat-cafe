@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import CardList from '../../layout/cards-list/card-list';
 import Button from "../../ui/button/button";
@@ -7,6 +7,7 @@ import FormNew from '../form-new/form-new';
 import { StyledStarsList, StyledListContainer, StyledListTitle } from "./style";
 
 function StarsList() {
+  const [isShowForm, setIsShowForm] = useState(false);
 
   return (
     <StyledStarsList>
@@ -15,10 +16,16 @@ function StarsList() {
           {"Наши звезды"}
         </StyledListTitle>
         <CardList />
-        <Button minWidth={353}>
+        <Button
+          minWidth={353}
+          onClick={() => setIsShowForm(true)}
+        >
           {"Добавить кота"}
-        </Button>  
-        <FormNew isShow={true} />
+        </Button>
+        <FormNew 
+          isShow={isShowForm}
+          onClose={() => setIsShowForm(false)}
+        />
       </StyledListContainer>
     </StyledStarsList>
   );
