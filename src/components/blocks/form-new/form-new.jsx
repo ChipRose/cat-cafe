@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import { useInfoStars } from '../../../context/stars-context';
 import Button from "../../ui/button/button";
 
-import { StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea } from "./style";
+import { StyledFormWrapper, StyledForm, StyledInputBlock, StyledFieldset, StyledNameInput, StyledTextarea, FormSubmitButton } from "./style";
 
 function FormNew({ isShow }) {
 
   const { addCard } = useInfoStars();
+  const [starPhoto, setStarPhoto] = useState('');
   const [starName, setStarName] = useState('');
   const [aboutText, setAboutText] = useState('');
 
@@ -24,7 +25,15 @@ function FormNew({ isShow }) {
         }}
       >
         <StyledInputBlock>
-          <input type="file" accept="image/png, image/jpeg"></input>
+          <input 
+            type="file"
+            accept="image/png, image/jpeg"
+            name="image"
+            files={starPhoto}
+            onChange={()=>{
+              const reader = new FileReader();
+            }}
+          />
           <StyledNameInput
             type="text"
             placeholder="Кличка кота"
@@ -40,12 +49,12 @@ function FormNew({ isShow }) {
           />
         </StyledInputBlock>
         <StyledFieldset>
-          <Button
+          <FormSubmitButton
             type="submit"
             disabled={!isButtonEnable}
           >
             {"Сохранить"}
-          </Button>
+          </FormSubmitButton>
           <Button type="reset">{"Отменить"}</Button>
         </StyledFieldset>
       </StyledForm>
