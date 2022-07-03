@@ -26,7 +26,7 @@ function FormNew({ isShow, onClose }) {
   const [starName, setStarName] = useState('');
   const [aboutText, setAboutText] = useState('');
 
-  const isButtonEnable = starName && aboutText;
+  const isButtonEnable = starName && aboutText && starPhoto;
 
   return isShow ? (
     <StyledFormWrapper>
@@ -36,6 +36,7 @@ function FormNew({ isShow, onClose }) {
           addCard({ starName, aboutText, starPhoto })
           setStarName('');
           setAboutText('');
+          setStarPhoto('');
         }}
       >
         <StyledInputBlock>
