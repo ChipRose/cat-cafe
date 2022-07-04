@@ -25,9 +25,12 @@ const theme = {
   borderRadius: "8px",
   mainShadow: "0 0 10px 2px rgba(0, 0, 0, 0.3)",
   outline: {
-    main: "2px solid rgba(255, 115, 43, 1)",
-    card: "3px solid rgba(255, 115, 43, 1)",
+    solid: "rgba(255, 115, 43, 1)",
   },
+  stickerBg: {
+    new: "rgba(255, 179, 52, 1)",
+    feature: "rgba(127, 201, 46, 1)",
+  }
 };
 
 export default theme;
