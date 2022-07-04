@@ -7,7 +7,8 @@ const starsData = [
     image: process.env.PUBLIC_URL + "/img/stars/lucky.jpg",
     image2x: process.env.PUBLIC_URL + "/img/stars/lucky@2x.jpg",
     alt: "Полосатый кот с желтым платком на шее",
-    feature: "new"
+    feature: "empty",
+    date: new Date(2022, 5, 1),
   },
   {
     id: 1,
@@ -17,7 +18,8 @@ const starsData = [
     image: process.env.PUBLIC_URL + "/img/stars/basilio.jpg",
     image2x: process.env.PUBLIC_URL + "/img/stars/basilio@2x.jpg",
     alt: "Полосатый кот, облизывающий мордочку",
-    feature: "empty"
+    feature: "empty",
+    date: new Date(2022, 5, 1),
   },
   {
     id: 2,
@@ -27,7 +29,8 @@ const starsData = [
     image: process.env.PUBLIC_URL + "/img/stars/sue.jpg",
     image2x: process.env.PUBLIC_URL + "/img/stars/sue@2x.jpg",
     alt: "Серая кошка с загнутыми ушами",
-    feature: "soft"
+    feature: "ласковый",
+    date: new Date(2022, 5, 1),
   }
 ];
 

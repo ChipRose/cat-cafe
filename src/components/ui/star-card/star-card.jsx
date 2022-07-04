@@ -1,24 +1,36 @@
 import React from 'react';
 
-import  {Card, CardImageBlock, CardImg, CardTitle, CardText} from './style';
+import CardSticker from '../card-sticker/card-sticker';
+
+import {
+  StyledCard,
+  ImageBlock,
+  CardTitle,
+  CardText
+} from './style';
 
 function StarCard({ star }) {
-  const { image, image2x, name, alt, about, id } = star;
+  const { image, name, alt, about, id, date, feature } = star;
+
+  const EMPTY_FEATURE = 'empty';
+  const nowDate = new Date();
+  const weekDuration = 7 * 24 * 3600 * 1000;
+  const isNew = nowDate - date < weekDuration ? true : false;
+  const starFeature = feature && feature.toLowerCase() !== 'empty' ? feature : null;
 
   return (
-    <Card tabIndex={id}>
-      <CardImageBlock>
-        <CardImg>
+    <StyledCard tabIndex={id}>
+      <ImageBlock>
+        <picture>
           <img
             src={image}
-            //srcSet={image2x}
             width={313}
             height={313}
             alt={alt}
           />
-        </CardImg>
-        {/* <StarSticker/> */}
-      </CardImageBlock>
+        </picture>
+        <CardSticker isShowNew={isNew} starFeature={starFeature} />
+      </ImageBlock>
       <div>
         <CardTitle level={3} size={32}>
           {name}
@@ -29,7 +41,7 @@ function StarCard({ star }) {
           </CardText>
         </div>
       </div>
-    </Card>
+    </StyledCard>
   );
 }
 

@@ -6,6 +6,7 @@ import { StyledList, StyledItem } from "./style";
 
 function CardList() {
   const stars = useInfoStars();
+  console.log(stars);
   return (
     <StyledList>
       {

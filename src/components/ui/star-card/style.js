@@ -2,35 +2,39 @@ import styled from "styled-components";
 
 import Title from "../title/title";
 
-const Card = styled.article`
+const StyledCard = styled.article`
 width:353px;
 height: 100%;
 padding: ${(props)=>props.theme.indent};
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-border-radius: 12px;
+border-radius: ${(props)=>props.theme.borderRadius};
 background: ${(props)=>props.theme.bgColor.contrast};
+transition: all 0.3s ease-in;
 &:hover{
   box-shadow: ${(props)=>props.theme.mainShadow};
 }
 &:focus, &:active {
-  outline: ${(props)=>props.theme.outline.card};
-  box-shadow: ${(props)=>props.theme.mainShadow};
+  box-shadow: 
+    0 0 0 3px ${(props)=>props.theme.outline.solid},
+    ${(props)=>props.theme.mainShadow};
 }
 `;
 
-const CardImageBlock = styled.div`
-  margin-bottom: 20px;
+const StyledCardImageBlock = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: ${(props)=>props.theme.borderRadius};
+  picture {
+    width: 100%;
+    height: 313px;
+    object-fit: contain;
+  }
 `;
 
-const CardImg = styled.picture`
-  width: 100%;
-  height: 313px;
-  object-fit: contain;
+const ImageBlock = styled(StyledCardImageBlock)`
+  margin-bottom: 20px;
 `;
 
 const CardTitle = styled(Title)`
@@ -45,4 +49,9 @@ const CardText = styled.p`
   }
 `;
 
-export {Card, CardImageBlock, CardImg, CardTitle, CardText};
+export {
+  StyledCard, 
+  ImageBlock,
+  CardTitle, 
+  CardText
+};
