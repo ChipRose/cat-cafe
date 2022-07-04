@@ -7,8 +7,6 @@ import { StarProvider } from '../../context/stars-context';
 import { GlobalStyle } from './style.js';
 import { ThemeProvider } from 'styled-components';
 
-export const InfoContext =  React.createContext();
-
 function App() {
   return (
     <ThemeProvider theme={theme}>

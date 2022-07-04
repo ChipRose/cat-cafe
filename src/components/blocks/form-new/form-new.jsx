@@ -30,7 +30,7 @@ function FormNew({ isShow, onClose }) {
         onSubmit={evt => {
           evt.preventDefault();
           setData(new Date());
-          addCard({ starName, aboutText, starPhoto, dataPublish, feature: 'empty' })
+          addCard({ starName, aboutText, starPhoto, dataPublish, feature: 'empty' });
           setStarName('');
           setAboutText('');
           setStarPhoto('');

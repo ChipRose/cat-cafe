@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
 import starsData from '../mocks/stars-data';
 
@@ -9,7 +9,16 @@ const useInfoStars = () => {
 };
 
 function StarProvider({ children }) {
-  const [stars, setStars] = useState(starsData);
+  const DOWNLOAD_DELAY = 1000;
+
+  const [stars, setStars] = useState('');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStars(starsData);
+    }, DOWNLOAD_DELAY);
+    return () => clearTimeout(timer);
+  },[]);
 
   const addCard = (star) => {
     const { starName, aboutText, starPhoto, dataPublish, catFeature } = star;
