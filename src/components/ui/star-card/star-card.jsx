@@ -16,7 +16,7 @@ function StarCard({ star }) {
   const nowDate = new Date();
   const weekDuration = 7 * 24 * 3600 * 1000;
   const isNew = nowDate - date < weekDuration ? true : false;
-  const starFeature = feature && feature.toLowerCase() !== 'empty' ? feature : null;
+  const starFeature = feature && feature.toLowerCase() !== EMPTY_FEATURE ? feature : null;
 
   return (
     <StyledCard tabIndex={id}>
