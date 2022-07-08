@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import InputImage from '../../ui/input-image/input-image';
 import { useInfoStars } from '../../../context/stars-context';
 import Button from "../../ui/button/button";
-import CloseButton from '../../ui/close-button/close-button';
 
 import {
   StyledFormWrapper,
@@ -49,7 +48,9 @@ function FormNew({ isShow, onClose }) {
           setStarPhoto('');
         }}
       >
-        <CloseButton onClick={onClose}/>
+        <Button 
+          typeOfButton='close'
+          onClick={onClose}/>
         <StyledInputBlock>
           <InputImage photoPreview={starPhoto} setPhoto={setStarPhoto}>{'Загрузить фото'}</InputImage>
           <StyledNameInput
