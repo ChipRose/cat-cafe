@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 import Button from '../../ui/button/button';
 
@@ -11,20 +11,20 @@ const StyledFormWrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const StyledForm = styled.form.attrs(()=>({
+const StyledForm = styled.form.attrs(() => ({
   method: "post",
   action: "#",
   enctype: "multipart/form-data",
 }))`
-  padding: ${(props)=>props.theme.indent};
+  padding: ${(props) => props.theme.indent};
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${(props)=>props.theme.bgColor.contrast};
-  border-radius: ${(props)=>props.theme.borderRadius};
-  box-shadow: ${(props)=>props.theme.mainShadow};
+  background: ${(props) => props.theme.bgColor.contrast};
+  border-radius: ${(props) => props.theme.borderRadius};
+  box-shadow: ${(props) => props.theme.mainShadow};
 `;
 
 const StyledFieldset = styled.fieldset`
@@ -43,14 +43,14 @@ const StyledInputBlock = styled(StyledFieldset)`
 const StyledField = css`
   padding: 15px;
   box-sizing: border-box;
-  font-size: ${(props)=>props.theme.mainText.size};
-  color: ${(props)=>props.theme.txtColor.main};
-  background: ${(props)=>props.theme.inputBgColor.main};
+  font-size: ${(props) => props.theme.mainText.size};
+  color: ${(props) => props.theme.txtColor.main};
+  background: ${(props) => props.theme.inputBgColor.main};
   border: none;
-  border-radius: ${(props)=>props.theme.borderRadius};
+  border-radius: ${(props) => props.theme.borderRadius};
 `;
 
-const StyledNameInput = styled.input.attrs((props)=>({
+const StyledNameInput = styled.input.attrs((props) => ({
   type: props.type
 }))`
   ${StyledField};
@@ -75,11 +75,11 @@ const FormSubmitButton = styled(Button)`
 `;
 
 export {
-  StyledFormWrapper, 
-  StyledForm, 
+  StyledFormWrapper,
+  StyledForm,
   StyledInputBlock,
   StyledFieldset,
-  StyledNameInput, 
-  NewFormTextarea, 
+  StyledNameInput,
+  NewFormTextarea,
   FormSubmitButton
 };

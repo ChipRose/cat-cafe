@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import Title from "../../ui/title/title";
+import Title from "../../ui/title/title.jsx";
 
 const StyledStarsList = styled.section`
-  background: ${(props)=>props.theme.bgColor.accent};
+  background: ${(props) => props.theme.bgColor.accent};
   background-image: url("${process.env.PUBLIC_URL}/img/bg/paw.svg"),
   url("${process.env.PUBLIC_URL}/img/bg/shape.svg"),
   url("${process.env.PUBLIC_URL}/img/bg/leaves.svg");
-  background-position: 0 5%, 0 100%, 100% 100%;
+  background-position: 0 5%, -200px calc(100% + 300px), 100% 100%;
   background-repeat: no-repeat;
 `;
 

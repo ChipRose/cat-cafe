@@ -1,14 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react';
 
-import starsData from '../mocks/stars-data';
+import starsData from '../mocks/stars-data.js';
+import galleryData from '../mocks/gallery-data.js';
 
 const StarContext = React.createContext();
+const GalleryContext = React.createContext();
 
 const useInfoStars = () => {
   return useContext(StarContext);
 };
 
-function StarProvider({ children }) {
+const useInfoGallery = () => {
+  return useContext(GalleryContext);
+};
+
+function Provider({ children }) {
   const DOWNLOAD_DELAY = 1000;
 
   const [stars, setStars] = useState('');
@@ -18,7 +24,7 @@ function StarProvider({ children }) {
       setStars(starsData);
     }, DOWNLOAD_DELAY);
     return () => clearTimeout(timer);
-  },[]);
+  }, []);
 
   const addCard = (star) => {
     const { starName, aboutText, starPhoto, dataPublish, catFeature } = star;
@@ -40,9 +46,11 @@ function StarProvider({ children }) {
       starsInfo: stars,
       addCard
     }}>
-      {children}
+      <GalleryContext.Provider value={galleryData}>
+        {children}
+      </GalleryContext.Provider>
     </StarContext.Provider>
   );
 };
 
-export { StarProvider, useInfoStars };
+export { Provider, useInfoStars, useInfoGallery };

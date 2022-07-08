@@ -1,4 +1,6 @@
-import Button from "../../ui/button/button";
+import React from 'react';
+
+import Button from "../../ui/button/button.jsx";
 
 function Nav() {
   return (

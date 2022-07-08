@@ -1,3 +1,5 @@
+import React from 'react';
+
 import close from '../../../assets/icons/close.svg';
 
 import { 
