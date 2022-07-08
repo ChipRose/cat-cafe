@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 
 import InputImage from '../../ui/input-image/input-image';
 import { useInfoStars } from '../../../context/stars-context';
 import Button from "../../ui/button/button";
+import CloseButton from '../../ui/close-button/close-button';
 
 import {
   StyledFormWrapper,
@@ -22,6 +22,19 @@ function FormNew({ isShow, onClose }) {
   const [aboutText, setAboutText] = useState('');
   const [dataPublish, setData] = useState(new Date());
 
+  const handlerEsc = (evt) => {
+    if (evt.key === "Escape") {
+      onClose && onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handlerEsc);
+    return () => {
+      document.removeEventListener("keydown", handlerEsc);
+    };
+  }, []);
+
   const isButtonEnable = starName && aboutText && starPhoto;
 
   return isShow ? (
@@ -36,6 +49,7 @@ function FormNew({ isShow, onClose }) {
           setStarPhoto('');
         }}
       >
+        <CloseButton onClick={onClose}/>
         <StyledInputBlock>
           <InputImage photoPreview={starPhoto} setPhoto={setStarPhoto}>{'Загрузить фото'}</InputImage>
           <StyledNameInput
