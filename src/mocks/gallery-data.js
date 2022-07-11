@@ -1,16 +1,16 @@
 const galleryData = [
   {
-    id: 1,
+    id: 0,
     src: process.env.PUBLIC_URL + "/img/gallery/1.jpg",
     alt: "Девушки чешут шею котику"
   },
   {
-    id: 2,
+    id: 1,
     src: process.env.PUBLIC_URL + "/img/gallery/2.jpg",
     alt: "Котики лежат на коленях у посетителей"
   },
   {
-    id: 3,
+    id: 2,
     src: process.env.PUBLIC_URL + "/img/gallery/3.jpg",
     alt: "Разные котики лежат на столах, стульях и полках"
   },

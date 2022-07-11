@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   ${BasicButton};
   min-width:  ${(props) => props.width};
   padding: 16.5px;
-  border-radius: 5px;
+  border-radius: ${(props) => props.theme.borderRadius.button};;
   font-size: 18px;
   line-height: 27px;
   font-weight: 700;
@@ -42,7 +42,7 @@ const StyledCloseButton = styled.button`
   position: absolute;
   top: 0;
   left: 100%;
-  border-radius: 0 ${(props)=>props.theme.borderRadius} 0 50%;
+  border-radius: 0 ${(props)=>props.theme.borderRadius.main} 0 50%;
   img {
     width: 15px;
     height: auto;

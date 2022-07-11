@@ -9,7 +9,7 @@ padding: ${(props)=>props.theme.indent};
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-border-radius: ${(props)=>props.theme.borderRadius};
+border-radius: ${(props)=>props.theme.borderRadius.main};
 background: ${(props)=>props.theme.bgColor.contrast};
 transition: all 0.3s ease-in;
 &:hover{
@@ -25,7 +25,7 @@ transition: all 0.3s ease-in;
 const StyledCardImageBlock = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: ${(props)=>props.theme.borderRadius};
+  border-radius: ${(props)=>props.theme.borderRadius.main};
   picture {
     width: 100%;
     height: 313px;

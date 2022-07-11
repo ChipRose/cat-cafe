@@ -23,7 +23,7 @@ const StyledForm = styled.form.attrs(() => ({
   flex-direction: column;
   align-items: center;
   background: ${(props) => props.theme.bgColor.contrast};
-  border-radius: ${(props) => props.theme.borderRadius};
+  border-radius: ${(props) => props.theme.borderRadius.main};
   box-shadow: ${(props) => props.theme.mainShadow};
 `;
 
@@ -47,7 +47,7 @@ const StyledField = css`
   color: ${(props) => props.theme.txtColor.main};
   background: ${(props) => props.theme.inputBgColor.main};
   border: none;
-  border-radius: ${(props) => props.theme.borderRadius};
+  border-radius: ${(props) => props.theme.borderRadius.main};
 `;
 
 const StyledNameInput = styled.input.attrs((props) => ({

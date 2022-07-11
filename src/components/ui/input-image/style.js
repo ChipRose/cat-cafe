@@ -26,7 +26,7 @@ const StyledInputFileLabel = styled.label`
   text-align:center;
   color: grey;
   background: ${(props) => props.theme.inputBgColor.main};
-  border-radius: ${(props) => props.theme.borderRadius};
+  border-radius: ${(props) => props.theme.borderRadius.main};
   cursor: pointer;
   transition: all 0.2s ease-in;
   &:hover {
