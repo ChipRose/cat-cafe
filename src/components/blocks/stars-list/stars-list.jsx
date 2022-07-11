@@ -16,7 +16,7 @@ function StarsList() {
 	return (
 		<StyledStarsList>
 			<StyledListContainer>
-				<StyledListTitle level={2} size={36}>
+				<StyledListTitle level={2} fontSize={36}>
 					{'Наши звезды'}
 				</StyledListTitle>
 				<CardList />

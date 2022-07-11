@@ -1,7 +1,10 @@
 import styled, {css} from "styled-components";
 
 const BasicButton = css`
+  display: inline-block;
+  text-align: center;
   border: none;
+  text-decoration: none;
   background: ${(props) => props.theme.buttonBgColor.default};
   transition: all 0.3s ease-out;
   cursor: pointer;
@@ -11,10 +14,11 @@ const BasicButton = css`
   }
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
   ${BasicButton};
   min-width:  ${(props) => props.width};
   padding: 16.5px;
+  box-sizing: border-box; 
   border-radius: ${(props) => props.theme.borderRadius.button};;
   font-size: 18px;
   line-height: 27px;
@@ -29,6 +33,17 @@ const StyledButton = styled.button`
   &:disabled {
     background: grey;
   }
+`;
+
+const StyledSliderButton = styled.button`
+  ${BasicButton};
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 `;
 
 const StyledCloseButton = styled.button`
@@ -51,5 +66,6 @@ const StyledCloseButton = styled.button`
 
 export { 
   StyledButton,
+  StyledSliderButton,
   StyledCloseButton,
 };

@@ -19,7 +19,7 @@ function About() {
 		<section>
 			<AboutContainer>
 				<AboutTextBLock>
-					<AboutTitle level={1} size={44}>
+					<AboutTitle level={1} fontSize={44}>
 						{'Первое в России котокафе'}
 					</AboutTitle>
 					<AboutInfo>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Swiper } from "swiper/react";
+import Button from '../button/button';
 
 const StyledSwiper = styled(Swiper)`
   width: 726px;
@@ -32,6 +33,20 @@ const StyledPreviewPhoto = styled.img`
 const SliderWrapper = styled.div`
   width: 726px;
   margin: 0 auto;
+  position: relative;
+`;
+
+const ButtonPrev = styled(Button)`  
+  position: absolute;
+  right: calc(100% + 30px);
+  bottom: 35px;
+`;
+
+const ButtonNext = styled(Button)`
+  position: absolute;
+  transform: rotate(180deg);
+  left: calc(100% + 30px);
+  bottom: 35px;
 `;
 
 export {
@@ -40,4 +55,6 @@ export {
   StyledMainPhoto,
   StyledPreviewPhoto,
   SliderWrapper,
+  ButtonNext,
+  ButtonPrev,
 };

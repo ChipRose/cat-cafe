@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import SwiperCore, { Virtual } from 'swiper';
+import React, { useState, useRef } from 'react';
+import SwiperCore, { Virtual, Navigation } from 'swiper';
 import { SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -12,6 +12,8 @@ import {
 	StyledMainPhoto,
 	StyledPreviewPhoto,
 	SliderWrapper,
+	ButtonNext,
+	ButtonPrev,
 } from './style.js';
 
 SwiperCore.use([Virtual]);
@@ -19,6 +21,9 @@ SwiperCore.use([Virtual]);
 function Slider({ slides }) {
 	const [swiperRef, setSwiperRef] = useState(null);
 	const [activeSlide, setActiveSlide] = useState(0);
+
+	const navigationPrevRef = useRef(null);
+	const navigationNextRef = useRef(null);
 
 	const slideTo = (index) => {
 		swiperRef.slideTo(index, 0);
@@ -34,37 +39,53 @@ function Slider({ slides }) {
 				slidesPerView={1}
 				centeredSlides={true}
 				spaceBetween={20}
-				pagination={{
-					type: 'fraction',
-				}}
-				navigation={true}
 				virtual
 			>
 				{slides &&
 					slides.map(({ src, alt, id }, index) => (
-						<SwiperSlide key={id} realIndex={index}>
-							<StyledMainPhoto src={src} alt={alt} />
+						<SwiperSlide key={id} virtualIndex={index}>
+							<StyledMainPhoto src={src} alt={alt}/>
 						</SwiperSlide>
 					))}
 			</StyledSwiper>
-			<StyledSwiperPreview slidesPerView={4} spaceBetween={20}>
-				{slides.map(({ src, alt, id }, index) => (
-					<SwiperSlide
-						onClick={() => {
-							slideTo(index);
-							setActiveSlide(index);
-						}}
-						key={id}
-						virtualIndex={index}
-					>
-						<StyledPreviewPhoto
-							src={src}
-							alt={alt}
-							$active={activeSlide === id}
-						/>
-					</SwiperSlide>
-				))}
-			</StyledSwiperPreview>
+			<SliderWrapper>
+				<StyledSwiperPreview
+					slidesPerView={4}
+					spaceBetween={20}
+					modules={[Navigation]}
+					pagination={{
+						type: 'fraction',
+					}}
+					navigation={{
+						prevEl: navigationPrevRef.current,
+						nextEl: navigationNextRef.current,
+					}}
+					onBeforeInit={(swiper) => {
+						swiper.params.navigation.prevEl = navigationPrevRef.current;
+						swiper.params.navigation.nextEl = navigationNextRef.current;
+					}}
+					loop
+				>
+					{slides.map(({ src, alt, id }, index) => (
+						<SwiperSlide
+							onClick={() => {
+								slideTo(index);
+								setActiveSlide(index);
+							}}
+							key={id}
+							virtualIndex={index}
+						>
+							<StyledPreviewPhoto
+								src={src}
+								alt={alt}
+								$active={activeSlide === id}
+							/>
+						</SwiperSlide>
+					))}
+				</StyledSwiperPreview>
+				<ButtonPrev typeOfButton={'slider'} ref={navigationPrevRef} />
+				<ButtonNext typeOfButton={'slider'} ref={navigationNextRef} />
+			</SliderWrapper>
 		</>
 	);
 }

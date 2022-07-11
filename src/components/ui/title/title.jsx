@@ -1,19 +1,13 @@
-import styled from "styled-components";
+import React from 'react';
 
-function Title({ level, size, children, className }) {
-  const StyledTitle = styled[`h${level}`]`
-    margin-top: 0;
-    padding: 0;
-    font-size: ${(props)=>props.fontSize};
-    font-weight: 700;
-    line-height: 115%;
-  `;
+import { StyledTitle } from './style.js';
 
-  return (
-    <StyledTitle fontSize={`${size}px`} className={className}>
-      {children}
-    </StyledTitle>
-  );
+function Title({...props}) {
+	return (
+		<StyledTitle as = {`h${props.level}`} $size={props.fontSize} className={props.className}>
+			{props.children}
+		</StyledTitle>
+	);
 }
 
 export default Title;

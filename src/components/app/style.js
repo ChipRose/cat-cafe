@@ -18,11 +18,11 @@ const GlobalStyle = createGlobalStyle`
     min-width: 1140px;
     height: 100%;
     font-family: "Inter", "Arial", sans-serif;
-    font-size: ${(props)=>props.theme.mainText.size};
-    line-height: ${(props)=>props.theme.mainText.line};
+    font-size: ${(props) => props.theme.mainText.size};
+    line-height: ${(props) => props.theme.mainText.line};
     font-weight: 400;
-    color: ${(props)=>props.theme.txtColor.main};
-    background: ${(props)=>props.theme.bgColor.main};
+    color: ${(props) => props.theme.txtColor.main};
+    background: ${(props) => props.theme.bgColor.main};
   }
 
   .app {
@@ -33,4 +33,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export {GlobalStyle};
+export { GlobalStyle };
