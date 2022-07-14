@@ -12,7 +12,6 @@ import {
 	FieldsWrapper,
 	StyledLegend,
 	StyledDurationList,
-  BuyField,
 	StyledPrice,
 } from './style.js';
 
@@ -21,24 +20,28 @@ function BuyForm() {
 	const [duration, setDuration] = useState(durationOptions[0]);
 	const [selectType, setSelectType] = useState(ticketOptions[0].id);
 
+	const priceType = ticketOptions.find((option) => option.id === Number(selectType));
+	const price = priceType.price * duration;
+
 	const AccordionContent = ticketOptions.map((option) => ({
 		id: option.id,
 		title: (
 			<ControlButton
-        type={'radio'}
+				type={'radio'}
 				labelComponent={TypeControl}
 				selectValue={selectType}
 				value={option.id}
-        name={'ticket-type'}
+				name={'ticket-type'}
 				onChange={(evt) => {
 					setSelectType(evt.target.value);
 				}}
 			>
-        {option.title}
-        </ControlButton>
+				{option.title}
+			</ControlButton>
 		),
 		description: option.description,
 	}));
+
 	return (
 		<StyledForm>
 			<FieldsWrapper>
@@ -72,7 +75,7 @@ function BuyForm() {
 					<StyledLegend $small $margin={8}>
 						{'Цена'}
 					</StyledLegend>
-					<StyledPrice>{'300 руб.'}</StyledPrice>
+					<StyledPrice>{`${price} руб.`}</StyledPrice>
 				</Fieldset>
 			</FieldsWrapper>
 			<Button type={'submit'}>{'Купить билет'}</Button>
