@@ -17,6 +17,10 @@ const theme = {
     line: "28px",
     weight: 700,
   },
+  descriptonText: {
+    size: "14px",
+    line: "21px",
+  },
   bgColor: {
     main: "rgba(255, 246, 217, 1)",
     accent: "rgba(255, 238, 173, 1)",
@@ -29,7 +33,7 @@ const theme = {
   inputBgColor: {
     main: "rgba(246, 246, 246, 1)",
   },
-  buttonBgColor: {
+  buttonColor: {
     default: "rgba(255, 115, 43, 1)",
     action: "rgba(243, 87, 20, 1)",
     shadow: "rgba(0, 0, 0, 0.14)",
@@ -41,6 +45,7 @@ const theme = {
     photo: "20px",
     photoPreview: "12px",
     form: "20px",
+    buy: "10px",
   },
   mainShadow: "0 0 10px 2px rgba(0, 0, 0, 0.3)",
   outline: {

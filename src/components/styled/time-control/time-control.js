@@ -11,10 +11,10 @@ const TimeControl = styled.span`
   ${(props)=>props.$checked
   ? css`
     color: ${(props)=>props.theme.txtColor.contrast};
-    background: ${(props)=>props.theme.buttonBgColor.default};
+    background: ${(props)=>props.theme.buttonColor.default};
   `
   : css`
-    background: ${(props)=>props.theme.buttonBgColor.neutral};
+    background: ${(props)=>props.theme.buttonColor.neutral};
   `
 }
 `;

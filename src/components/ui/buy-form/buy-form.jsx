@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-import { Fieldset, TimeControl } from '../../styled';
+import { Fieldset, TimeControl, TypeControl } from '../../styled';
 import { useOptionsContext } from '../../../context/stars-context.js';
 
+import Accordion from '../accordion/accordion';
 import Button from '../button/button.jsx';
 import ControlButton from '../control-button/control-button.jsx';
 
@@ -11,14 +12,33 @@ import {
 	FieldsWrapper,
 	StyledLegend,
 	StyledDurationList,
+  BuyField,
 	StyledPrice,
 } from './style.js';
 
 function BuyForm() {
-	const buyOptions = useOptionsContext();
-	const { durationOptions } = buyOptions;
+	const { durationOptions, ticketOptions } = useOptionsContext();
 	const [duration, setDuration] = useState(durationOptions[0]);
+	const [selectType, setSelectType] = useState(ticketOptions[0].id);
 
+	const AccordionContent = ticketOptions.map((option) => ({
+		id: option.id,
+		title: (
+			<ControlButton
+        type={'radio'}
+				labelComponent={TypeControl}
+				selectValue={selectType}
+				value={option.id}
+        name={'ticket-type'}
+				onChange={(evt) => {
+					setSelectType(evt.target.value);
+				}}
+			>
+        {option.title}
+        </ControlButton>
+		),
+		description: option.description,
+	}));
 	return (
 		<StyledForm>
 			<FieldsWrapper>
@@ -32,11 +52,11 @@ function BuyForm() {
 								<li key={option}>
 									<ControlButton
 										type={'radio'}
+										labelComponent={TimeControl}
 										value={option}
 										selectValue={duration}
 										name={'duration'}
-										onChange={evt => setDuration(evt.target.value)}
-                    labelComponent={TimeControl}
+										onChange={(evt) => setDuration(evt.target.value)}
 									>
 										{option}
 									</ControlButton>
@@ -46,6 +66,7 @@ function BuyForm() {
 				</Fieldset>
 				<Fieldset $margin={24}>
 					<StyledLegend $margin={12}>{'Тип билета'}</StyledLegend>
+					<Accordion content={AccordionContent} isHTML />
 				</Fieldset>
 				<Fieldset>
 					<StyledLegend $small $margin={8}>

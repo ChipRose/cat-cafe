@@ -1,16 +1,17 @@
 import React, { forwardRef } from 'react';
 
-import close from '../../../assets/icons/close.svg';
-import arrow from '../../../assets/icons/arrow.svg';
+import closeImg from '../../../assets/icons/close.svg';
+import arrowImg from '../../../assets/icons/arrow.svg';
+import arrowDownImg from '../../../assets/icons/down-arrow.svg';
 
-import { StyledButton, StyledSliderButton, StyledCloseButton } from './style';
+import { StyledButton, StyledSliderButton, StyledCloseButton, AccordionButton } from './style.js';
 
 const Button = forwardRef(({ ...props }, ref) => {
 	switch (props.typeOfButton) {
 		case 'close':
 			return (
 				<StyledCloseButton type="button" onClick={props.onClick}>
-					<img width="20px" height="20px" src={close} alt="Кнопка закрыть" />
+					<img width="20px" height="20px" src={closeImg} alt="Кнопка закрыть" />
 				</StyledCloseButton>
 			);
 		case 'slider':
@@ -21,8 +22,19 @@ const Button = forwardRef(({ ...props }, ref) => {
 					onClick={props.onClick}
 					className={props.className}
 				>
-					<img width="24px" height="24px" src={arrow} alt="Кнопка слайдера" />
+					<img width="24px" height="24px" src={arrowImg} alt="Кнопка слайдера" />
 				</StyledSliderButton>
+			);
+      case 'accordion':
+			return (
+				<AccordionButton
+					type="button"
+					onClick={props.onClick}
+          {...props}
+					className={props.className}
+				>
+					<img width="16px" height="16px" src={arrowDownImg} alt="Кнопка аккордиона" />
+				</AccordionButton>
 			);
 		default:
 			return (
