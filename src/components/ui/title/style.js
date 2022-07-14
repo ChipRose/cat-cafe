@@ -9,7 +9,9 @@ const TitleBasic = css`
 
 const StyledTitle = styled.h1`
   ${TitleBasic};
-  font-size: ${(props)=>`${props.$size}px`};
+  margin-bottom: ${(props)=>props.$margin||0}px;
+  font-size: ${(props)=>props.$size}px;
+  text-align: ${(props)=>props.$align||'left'};
 `;
 
 export { StyledTitle };

@@ -71,12 +71,14 @@ function FormNew({ isShow, onClose }) {
           <FormSubmitButton
             type="submit"
             disabled={!isButtonEnable}
+            $minWidth={260}
           >
             {"Сохранить"}
           </FormSubmitButton>
           <Button
             type="reset"
             onClick={onClose}
+            $minWidth={260}
           >{"Отменить"}
           </Button>
         </StyledFieldset>

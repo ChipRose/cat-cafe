@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Address from '../../ui/address/address.jsx';
-import AboutImage from '../../../assets/about/in-a-chair.svg';
+import aboutImg from '../../../assets/about/in-a-chair.svg';
+import Title from '../../ui/title/title.jsx';
 
 import {
 	AboutContainer,
 	AboutTextBLock,
-	AboutTitle,
 	AboutInfo,
 	AboutText,
 	AboutWorkTime,
@@ -19,9 +19,9 @@ function About() {
 		<section>
 			<AboutContainer>
 				<AboutTextBLock>
-					<AboutTitle level={1} fontSize={44}>
+					<Title level={1} $size={44} $margin={20}>
 						{'Первое в России котокафе'}
-					</AboutTitle>
+					</Title>
 					<AboutInfo>
 						<AboutText>
               Крупнейшее котокафе России, в котором живёт 50 кошек и котов,
@@ -34,7 +34,7 @@ function About() {
 				</AboutTextBLock>
 				<AboutImageBlock>
 					<AboutImg
-						src={AboutImage}
+						src={aboutImg}
 						width="446"
 						height="446"
 						alt="Девушка в кресле с котом на спинке"

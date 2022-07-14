@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Title from "../../ui/title/title.jsx";
-
 const StyledGallery = styled.section`
   background: ${(props) => props.theme.bgColor.accent};
   background-image: url("${process.env.PUBLIC_URL}/img/bg/paw-right.svg"),
@@ -12,19 +10,13 @@ const StyledGallery = styled.section`
 `;
 
 const StyledGalleryWrapper = styled.div`
-  width: 1140px;
-  padding: 80px 20px 100px;
+  width: ${(props) => props.theme.appWidth};
+  padding: 80px ${(props) => props.theme.indent} 100px;
   margin: 0 auto;
   box-sizing: border-box;
-`;
-
-const GalleryTitle = styled(Title)`
-  margin-bottom: 60px;
-  text-align: center;
 `;
 
 export {
   StyledGallery,
   StyledGalleryWrapper,
-  GalleryTitle,
 }; 

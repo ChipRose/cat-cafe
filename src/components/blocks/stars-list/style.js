@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import Title from "../../ui/title/title.jsx";
-
 const StyledStarsList = styled.section`
   background: ${(props) => props.theme.bgColor.accent};
   background-image: url("${process.env.PUBLIC_URL}/img/bg/paw.svg"),
@@ -23,9 +21,4 @@ const StyledListContainer = styled.div`
   align-items: center;
 `;
 
-const StyledListTitle = styled(Title)`
-  margin-bottom: 64px;
-  text-align: center;
-`;
-
-export { StyledStarsList, StyledListContainer, StyledListTitle }; 
+export { StyledStarsList, StyledListContainer }; 

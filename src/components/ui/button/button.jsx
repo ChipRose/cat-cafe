@@ -1,4 +1,4 @@
-import React, {forwardRef} from 'react';
+import React, { forwardRef } from 'react';
 
 import close from '../../../assets/icons/close.svg';
 import arrow from '../../../assets/icons/arrow.svg';
@@ -15,19 +15,23 @@ const Button = forwardRef(({ ...props }, ref) => {
 			);
 		case 'slider':
 			return (
-				<StyledSliderButton ref={ref} type="button" onClick={props.onClick} className={props.className}>
+				<StyledSliderButton
+					ref={ref}
+					type="button"
+					onClick={props.onClick}
+					className={props.className}
+				>
 					<img width="24px" height="24px" src={arrow} alt="Кнопка слайдера" />
 				</StyledSliderButton>
 			);
 		default:
 			return (
 				<StyledButton
+					{...props}
 					{...(props.link
 						? { href: props.link }
 						: { as: 'button', type: props.type || 'button' })}
-					width={props.minWidth ? `${props.minWidth}px` : '260px'}
 					disabled={props.disabled}
-					className={props.className}
 					onClick={props.onClick}
 				>
 					{props.children}

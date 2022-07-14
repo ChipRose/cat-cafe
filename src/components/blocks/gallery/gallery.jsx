@@ -2,8 +2,9 @@ import React from 'react';
 
 import { useInfoGallery } from '../../../context/stars-context';
 import Slider from '../../ui/slider/slider.jsx';
+import Title from '../../ui/title/title';
 
-import { StyledGallery, StyledGalleryWrapper, GalleryTitle } from './style';
+import { StyledGallery, StyledGalleryWrapper } from './style';
 // eslint-disable-next-line
 import "swiper/css/bundle";
 
@@ -14,9 +15,9 @@ function Gallery() {
 	return (
 		<StyledGallery>
 			<StyledGalleryWrapper>
-				<GalleryTitle level={1} size={44}>
+				<Title level={1} $size={44} $margin={64} $align={'center'}>
 					{'Галерея нашего кафе'}
-				</GalleryTitle>
+				</Title>
 				<Slider slides={gallery}/>
 			</StyledGalleryWrapper>
 		</StyledGallery>

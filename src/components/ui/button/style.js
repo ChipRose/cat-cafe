@@ -16,10 +16,10 @@ const BasicButton = css`
 
 const StyledButton = styled.a`
   ${BasicButton};
-  min-width:  ${(props) => props.width};
+  min-width:  ${(props) => props.$minWidth}px||100%;
   padding: 16.5px;
   box-sizing: border-box; 
-  border-radius: ${(props) => props.theme.borderRadius.button};;
+  border-radius: ${(props) => props.theme.borderRadius.button};
   font-size: 18px;
   line-height: 27px;
   font-weight: 700;

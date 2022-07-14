@@ -2,16 +2,24 @@ import React, { useContext, useState, useEffect } from 'react';
 
 import starsData from '../mocks/stars-data.js';
 import galleryData from '../mocks/gallery-data.js';
+import buyOptions from '../mocks/buy-options.js';
 
 const StarContext = React.createContext();
-const GalleryContext = React.createContext();
 
 const useInfoStars = () => {
   return useContext(StarContext);
 };
 
+const GalleryContext = React.createContext();
+
 const useInfoGallery = () => {
   return useContext(GalleryContext);
+};
+
+const BuyOptionsContext = React.createContext();
+
+const useOptionsContext = () => {
+  return useContext(BuyOptionsContext);
 };
 
 function Provider({ children }) {
@@ -47,10 +55,12 @@ function Provider({ children }) {
       addCard
     }}>
       <GalleryContext.Provider value={galleryData}>
-        {children}
+        <BuyOptionsContext.Provider value={buyOptions}>
+          {children}
+        </BuyOptionsContext.Provider>
       </GalleryContext.Provider>
     </StarContext.Provider>
   );
 };
 
-export { Provider, useInfoStars, useInfoGallery };
+export { Provider, useInfoStars, useInfoGallery, useOptionsContext };

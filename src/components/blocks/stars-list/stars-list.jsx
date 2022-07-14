@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import CardList from '../../layout/cards-list/card-list.jsx';
 import Button from '../../ui/button/button.jsx';
 import FormNew from '../form-new/form-new.jsx';
+import Title from '../../ui/title/title.jsx';
 
 import {
 	StyledStarsList,
 	StyledListContainer,
-	StyledListTitle,
 } from './style.js';
 
 function StarsList() {
@@ -16,11 +16,11 @@ function StarsList() {
 	return (
 		<StyledStarsList>
 			<StyledListContainer>
-				<StyledListTitle level={2} fontSize={36}>
+				<Title level={2} $size={36} $margin={64} $align={'center'}>
 					{'Наши звезды'}
-				</StyledListTitle>
+				</Title>
 				<CardList />
-				<Button minWidth={353} onClick={() => setIsShowForm(true)}>
+				<Button $minWidth={353} onClick={() => setIsShowForm(true)}>
 					{'Добавить кота'}
 				</Button>
 				<FormNew isShow={isShowForm} onClose={() => setIsShowForm(false)} />
