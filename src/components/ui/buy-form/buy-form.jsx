@@ -6,6 +6,7 @@ import { useOptionsContext } from '../../../context/stars-context.js';
 import Accordion from '../accordion/accordion';
 import Button from '../button/button.jsx';
 import ControlButton from '../control-button/control-button.jsx';
+import SuccessState from '../success-state/succes-state.jsx';
 
 import {
 	StyledForm,
@@ -19,6 +20,7 @@ function BuyForm() {
 	const { durationOptions, ticketOptions } = useOptionsContext();
 	const [duration, setDuration] = useState(durationOptions[0]);
 	const [selectType, setSelectType] = useState(ticketOptions[0].id);
+  const [showMessage, setShowMessage] = useState(false);
 
 	const priceType = ticketOptions.find((option) => option.id === Number(selectType));
 	const price = priceType.price * duration;
@@ -43,7 +45,10 @@ function BuyForm() {
 	}));
 
 	return (
-		<StyledForm>
+		<StyledForm onSubmit={(evt)=>{
+      evt.preventDefault();
+      setShowMessage(true);
+    }}>
 			<FieldsWrapper>
 				<Fieldset $margin={24}>
 					<StyledLegend $margin={12}>
@@ -79,6 +84,7 @@ function BuyForm() {
 				</Fieldset>
 			</FieldsWrapper>
 			<Button type={'submit'}>{'Купить билет'}</Button>
+      <SuccessState type={priceType.title} duration={duration} price={price} isShow={showMessage} isClose={()=>setShowMessage(false)}/>
 		</StyledForm>
 	);
 }

@@ -5,7 +5,7 @@ import {
 } from './style.js';
 
 function Copyright() {
-	return <StyledCopyright>Создано 2021</StyledCopyright>;
+	return <StyledCopyright>Создано 2022</StyledCopyright>;
 }
 
 export default Copyright;

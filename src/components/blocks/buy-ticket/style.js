@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Title from '../../ui/title/title.jsx';
-
 const StyledBuyTicket = styled.section`
   background-image: url("${process.env.PUBLIC_URL}/img/bg/dark-shape.svg");
   background-position: -261px calc(100% + 202px);

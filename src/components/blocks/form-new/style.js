@@ -6,6 +6,7 @@ const StyledFormWrapper = styled.div`
   width: 800px;
   min-height: 500px;
   position: absolute;
+  z-index: 10;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

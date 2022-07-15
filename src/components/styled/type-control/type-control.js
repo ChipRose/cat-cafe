@@ -24,11 +24,11 @@ display: block;
   position: absolute;
   left: 3px;
   top: 50%;
-  display: ${({$checked})=> $checked ? 'block':'none'};
+  opacity: ${({$checked})=> $checked ? 1:0};
   transform: translateY(-50%);
   border-radius: 50%;
   background:  ${(props)=>props.theme.buttonColor.default};
-}
-`;
+  transition: opacity 0.2s ease-in;
+}`;
 
 export default TypeControl;

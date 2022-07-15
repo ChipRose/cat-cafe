@@ -73,13 +73,13 @@ const StyledCloseButton = styled.button`
   ${BasicButton};
   width: 40px;
   height: 40px;
-  box-sizing: border - box;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
-  left: 100 %;
+  right: 0;
   border-radius: 0 ${(props) => props.theme.borderRadius.main} 0 50%;
   img {
     width: 15px;
