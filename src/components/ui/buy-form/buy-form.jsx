@@ -20,35 +20,43 @@ function BuyForm() {
 	const { durationOptions, ticketOptions } = useOptionsContext();
 	const [duration, setDuration] = useState(durationOptions[0]);
 	const [selectType, setSelectType] = useState(ticketOptions[0].id);
-  const [showMessage, setShowMessage] = useState(false);
+	const [showMessage, setShowMessage] = useState(false);
 
-	const priceType = ticketOptions.find((option) => option.id === Number(selectType));
+	const ticketAvailability = durationOptions.length && ticketOptions.length;
+
+	const priceType = ticketOptions.find(
+		(option) => option.id === Number(selectType)
+	);
 	const price = priceType.price * duration;
 
-	const AccordionContent = ticketOptions.map((option) => ({
-		id: option.id,
-		title: (
-			<ControlButton
-				type={'radio'}
-				labelComponent={TypeControl}
-				selectValue={selectType}
-				value={option.id}
-				name={'ticket-type'}
-				onChange={(evt) => {
-					setSelectType(evt.target.value);
-				}}
-			>
-				{option.title}
-			</ControlButton>
-		),
-		description: option.description,
-	}));
+	const AccordionContent =
+		ticketAvailability &&
+		ticketOptions.map((option) => ({
+			id: option.id,
+			title: (
+				<ControlButton
+					type={'radio'}
+					labelComponent={TypeControl}
+					selectValue={selectType}
+					value={option.id}
+					name={'ticket-type'}
+					onChange={(evt) => {
+						setSelectType(evt.target.value);
+					}}
+				>
+					{option.title}
+				</ControlButton>
+			),
+			description: option.description,
+		}));
 
-	return (
-		<StyledForm onSubmit={(evt)=>{
-      evt.preventDefault();
-      setShowMessage(true);
-    }}>
+	return ticketAvailability ? (
+		<StyledForm
+			onSubmit={(evt) => {
+				evt.preventDefault();
+				setShowMessage(true);
+			}}
+		>
 			<FieldsWrapper>
 				<Fieldset $margin={24}>
 					<StyledLegend $margin={12}>
@@ -84,8 +92,15 @@ function BuyForm() {
 				</Fieldset>
 			</FieldsWrapper>
 			<Button type={'submit'}>{'Купить билет'}</Button>
-      <SuccessState type={priceType.title} duration={duration} price={price} isShow={showMessage} isClose={()=>setShowMessage(false)}/>
+			<SuccessState
+				type={priceType.title}
+				duration={duration}
+				price={price}
+				isShow={showMessage}
+				isClose={() => setShowMessage(false)}
+			/>
 		</StyledForm>
-	);
+	) : null;
 }
+
 export default BuyForm;
