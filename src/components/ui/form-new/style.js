@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import Button from '../../ui/button/button';
+import {Fieldset} from '../../styled/index.js';
 
 const StyledFormWrapper = styled.div`
   width: 800px;
@@ -18,6 +18,7 @@ const StyledForm = styled.form.attrs(() => ({
   enctype: "multipart/form-data",
 }))`
   padding: ${(props) => props.theme.indent};
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   display: flex;
@@ -28,13 +29,7 @@ const StyledForm = styled.form.attrs(() => ({
   box-shadow: ${(props) => props.theme.mainShadow};
 `;
 
-const StyledFieldset = styled.fieldset`
-  margin: 0;
-  padding: 0;
-  border: none;
-`;
-
-const StyledInputBlock = styled(StyledFieldset)`
+const InputBlock = styled(Fieldset)`
   width: 100%;
   flex: 1 1 auto;
   display: flex;
@@ -71,16 +66,19 @@ const NewFormTextarea = styled(StyledTextarea)`
   margin-bottom: 20px;
 `;
 
-const FormSubmitButton = styled(Button)`
-  margin-right: 20px;
+const ButtonsBlock = styled(Fieldset)`
+  display: flex;
+  justify-content: center;
+  button[type="submit"]{
+    margin-right: 20px;
+  }
 `;
 
 export {
   StyledFormWrapper,
   StyledForm,
-  StyledInputBlock,
-  StyledFieldset,
+  InputBlock,
+  ButtonsBlock,
   StyledNameInput,
   NewFormTextarea,
-  FormSubmitButton
 };

@@ -41,7 +41,7 @@ const Button = forwardRef(({ ...props }, ref) => {
 				<StyledButton
 					{...props}
 					{...(props.link
-						? { href: props.link }
+						? { to: props.link }
 						: { as: 'button', type: props.type || 'button' })}
 					disabled={props.disabled}
 					onClick={props.onClick}

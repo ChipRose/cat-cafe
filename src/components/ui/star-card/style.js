@@ -22,19 +22,17 @@ transition: all 0.3s ease-in;
 }
 `;
 
-const StyledCardImageBlock = styled.div`
+const ImageBlock = styled.div`
+  height: 313px;
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
   border-radius: ${(props)=>props.theme.borderRadius.main};
   picture {
     width: 100%;
-    height: 313px;
+    height: auto;
     object-fit: contain;
   }
-`;
-
-const ImageBlock = styled(StyledCardImageBlock)`
-  margin-bottom: 20px;
 `;
 
 const CardTitle = styled(Title)`

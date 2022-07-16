@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import {Link} from 'react-router-dom';
 
 const AccordionButton = styled.button`
   background: transparent;
@@ -18,6 +19,7 @@ const AccordionButton = styled.button`
 
 const BasicButton = css`
   display: inline-block;
+  box-sizing: border-box;
   text-align: center;
   border: none;
   text-decoration: none;
@@ -30,7 +32,7 @@ const BasicButton = css`
   }
 `;
 
-const StyledButton = styled.a`
+const StyledButton = styled(Link)`
   ${BasicButton};
   ${(props) => props.$minWidth
     ? css`
@@ -41,7 +43,7 @@ const StyledButton = styled.a`
     `
   }
   padding: 16.5px;
-  box-sizing: border-box;
+  
   border-radius: ${(props) => props.theme.borderRadius.button};
   font-size: 18px;
   line-height: 27px;

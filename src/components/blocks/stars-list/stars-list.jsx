@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import CardList from '../../layout/cards-list/card-list.jsx';
 import Button from '../../ui/button/button.jsx';
-import FormNew from '../form-new/form-new.jsx';
+import FormNew from '../../ui/form-new/form-new.jsx';
 import Title from '../../ui/title/title.jsx';
 
 import {

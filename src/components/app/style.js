@@ -26,11 +26,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     width: 100%;
     height: 100%;
-  }
-
-  body,
-  html {
-    margin: 0;
+    margin: 0 0 0 calc(100vw-100%);
   }
 
   body {

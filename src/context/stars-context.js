@@ -32,7 +32,7 @@ function Provider({ children }) {
       setStars(starsData);
     }, DOWNLOAD_DELAY);
     return () => clearTimeout(timer);
-  }, []);
+  },[]);
 
   const addCard = (star) => {
     const { starName, aboutText, starPhoto, dataPublish, catFeature } = star;
