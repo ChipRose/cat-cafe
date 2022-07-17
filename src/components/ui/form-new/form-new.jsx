@@ -20,13 +20,13 @@ function FormNew({ isShow, onClose }) {
 	const [aboutText, setAboutText] = useState('');
 	const [dataPublish, setData] = useState(new Date());
 
-	const handlerEsc = (evt) => {
-		if (evt.key === 'Escape') {
-			onClose && onClose();
-		}
-	};
-
-	useEffect(() => {
+  
+	useEffect((onClose) => {
+    const handlerEsc = (evt) => {
+      if (evt.key === 'Escape') {
+        onClose && onClose();
+      }
+    };
 		document.addEventListener('keydown', handlerEsc);
 		return () => {
 			document.removeEventListener('keydown', handlerEsc);

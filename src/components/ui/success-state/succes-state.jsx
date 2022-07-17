@@ -8,13 +8,13 @@ import Title from '../../ui/title/title.jsx';
 import { SuccesStateWrapper, ImageWrapper, TextWrapper, Paragraph } from './style.js';
 
 function SuccesState({ type, duration, price, isShow, isClose }) {
-  const handlerEsc =(evt)=>{
-    if(evt.keyCode===27){
-      isClose && isClose();
+  
+  useEffect((isClose)=>{
+    const handlerEsc =(evt)=>{
+      if(evt.keyCode===27){
+        isClose && isClose();
+      }
     }
-  }
-
-  useEffect(()=>{
     document.addEventListener('keydown', handlerEsc);
     return()=>{
       document.removeEventListener('keydown', handlerEsc);
