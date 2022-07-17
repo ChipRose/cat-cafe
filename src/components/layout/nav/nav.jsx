@@ -1,15 +1,18 @@
 import React from 'react';
 
-import { AppRoute } from '../../../mocks/const.js';
-
-import Button from "../../ui/button/button.jsx";
+import { navButtons } from '../../../mocks/nav-buttons.js';
+import { useLocation } from 'react-router-dom';
 
 function Nav() {
-  return (
-    <nav>
-      <Button  link={AppRoute.BUY} $minWidth={260}>Купить билет</Button>
-    </nav>
-  );
+	const pageUrl = useLocation().pathname;
+
+	return (
+		<nav>
+			{navButtons
+				.filter((button) => button.to !== pageUrl)
+				.map((button) => button.button)}
+		</nav>
+	);
 }
 
 export default Nav;

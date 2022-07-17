@@ -43,7 +43,6 @@ const StyledButton = styled(Link)`
     `
   }
   padding: 16.5px;
-  
   border-radius: ${(props) => props.theme.borderRadius.button};
   font-size: 18px;
   line-height: 27px;

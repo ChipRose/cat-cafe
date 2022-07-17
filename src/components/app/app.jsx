@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppRoute } from '../../mocks/const.js';
 
+import ScrollToTop from '../ui/scroll-top/scroll-top.js';
 import PageWrapper from '../layout/page-wrapper/page-wrapper.jsx';
 import MainPage from '../pages/main-page/main-page.jsx';
 import BuyPage from '../pages/buy-page/buy-page.jsx';
@@ -23,6 +24,7 @@ function App() {
 					<BuyOptionsProvider>
 						<GlobalStyle />
 						<BrowserRouter>
+							<ScrollToTop />
 							<Routes>
 								<Route path={AppRoute.MAIN} element={<PageWrapper />}>
 									<Route index element={<MainPage />} />
