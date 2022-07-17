@@ -13,18 +13,17 @@ import {
 } from './style.js';
 
 function SuccesState({ type, duration, price, isShow, isClose }) {
-  
-  useEffect((isClose)=>{
-    const handlerEsc =(evt)=>{
-      if(evt.keyCode===27){
-        isClose && isClose();
-      }
-    }
-    document.addEventListener('keydown', handlerEsc);
-    return()=>{
-      document.removeEventListener('keydown', handlerEsc);
-    }
-  },[]);
+	useEffect((isClose) => {
+		const handlerEsc = (evt) => {
+			if (evt.keyCode === 27) {
+				isClose && isClose();
+			}
+		};
+		document.addEventListener('keydown', handlerEsc);
+		return () => {
+			document.removeEventListener('keydown', handlerEsc);
+		};
+	}, []);
 
 	return isShow ? (
 		<SuccesStateWrapper>
