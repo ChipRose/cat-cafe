@@ -25,7 +25,7 @@ return (
           <BuyForm/>
         </StyledBuyTicketFormBlock>
         <StyledBuyTicketImageBlock>
-          <img src={catImg}/>
+          <img src={catImg} alt={"Кот в цветочном горшке"}/>
         </StyledBuyTicketImageBlock>
       </StyledBuyTicketFormWrapper>
     </StyledBuyTicketWrapper>
