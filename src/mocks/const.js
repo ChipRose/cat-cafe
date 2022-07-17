@@ -1,5 +1,5 @@
 const AppRoute = {
-  MAIN: "/cat-cafe",
+  MAIN: "/cat-cafe/",
   BUY: "/cat-cafe/buy",
 }
 
