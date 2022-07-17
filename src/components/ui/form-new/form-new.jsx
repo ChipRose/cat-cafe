@@ -8,7 +8,7 @@ import {
 	StyledFormWrapper,
 	StyledForm,
 	InputBlock,
-  ButtonsBlock,
+	ButtonsBlock,
 	StyledNameInput,
 	NewFormTextarea,
 } from './style.js';
@@ -73,11 +73,7 @@ function FormNew({ isShow, onClose }) {
 					/>
 				</InputBlock>
 				<ButtonsBlock>
-					<Button
-						type="submit"
-						disabled={!isButtonEnable}
-						$minWidth={260}
-					>
+					<Button type="submit" disabled={!isButtonEnable} $minWidth={260}>
 						{'Сохранить'}
 					</Button>
 					<Button type="button" onClick={onClose} $minWidth={260}>
