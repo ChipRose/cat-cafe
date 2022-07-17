@@ -16,10 +16,6 @@ const AboutTextBLock = styled.div`
   flex: 0 0 598px;
 `;
 
-const AboutTitle = styled(Title)`
-  margin-bottom: 20px;
-`;
-
 const AboutInfo = styled.div`
   margin-bottom: 40px;
 `;
@@ -50,4 +46,4 @@ const AboutImg = styled.img`
   object-fit: contain;
 `;
 
-export {AboutContainer, AboutTextBLock, AboutTitle, AboutInfo, AboutText, AboutWorkTime, AboutImageBlock, AboutImg};
+export {AboutContainer, AboutTextBLock, AboutInfo, AboutText, AboutWorkTime, AboutImageBlock, AboutImg};

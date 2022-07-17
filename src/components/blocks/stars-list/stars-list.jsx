@@ -1,34 +1,32 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
 
-import CardList from '../../layout/cards-list/card-list';
-import Button from "../../ui/button/button";
-import FormNew from '../form-new/form-new';
+import CardList from '../../ui/cards-list/card-list.jsx';
+import Button from '../../ui/button/button.jsx';
+import FormNew from '../../ui/form-new/form-new.jsx';
+import Title from '../../ui/title/title.jsx';
 
-import { StyledStarsList, StyledListContainer, StyledListTitle } from "./style";
+import {
+	StyledStarsList,
+	StyledListContainer,
+} from './style.js';
 
 function StarsList() {
-  const [isShowForm, setIsShowForm] = useState(false);
+	const [isShowForm, setIsShowForm] = useState(false);
 
-  return (
-    <StyledStarsList>
-      <StyledListContainer>
-        <StyledListTitle level={2} size={36} >
-          {"Наши звезды"}
-        </StyledListTitle>
-        <CardList />
-        <Button
-          minWidth={353}
-          onClick={() => setIsShowForm(true)}
-        >
-          {"Добавить кота"}
-        </Button>
-        <FormNew 
-          isShow={isShowForm}
-          onClose={() => setIsShowForm(false)}
-        />
-      </StyledListContainer>
-    </StyledStarsList>
-  );
+	return (
+		<StyledStarsList>
+			<StyledListContainer>
+				<Title level={2} $size={36} $margin={64} $align={'center'}>
+					{'Наши звезды'}
+				</Title>
+				<CardList />
+				<Button $minWidth={353} onClick={() => setIsShowForm(true)}>
+					{'Добавить кота'}
+				</Button>
+				<FormNew isShow={isShowForm} onClose={() => setIsShowForm(false)} />
+			</StyledListContainer>
+		</StyledStarsList>
+	);
 }
 
 export default StarsList;

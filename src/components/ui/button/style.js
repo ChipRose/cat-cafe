@@ -1,23 +1,57 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import {Link} from 'react-router-dom';
 
-const StyledButton = styled.button`
-  min-width:  ${(props) => props.width};
-  padding: 16.5px;
+const AccordionButton = styled.button`
+  background: transparent;
   border: none;
-  border-radius: 5px;
+  img{
+    transition: all 0.3s ease-in;
+  }
+  ${({ isOpen }) => isOpen
+    ? css`
+      img{
+        transform: rotate(180deg);
+      }
+    `
+    : null
+  }
+`;
+
+const BasicButton = css`
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  background: ${(props) => props.theme.buttonColor.default};
+  transition: all 0.3s ease-out;
   cursor: pointer;
+  &:hover, 
+  &:active {
+    background: ${(props) => props.theme.buttonColor.action};
+  }
+`;
+
+const StyledButton = styled(Link)`
+  ${BasicButton};
+  ${(props) => props.$minWidth
+    ? css`
+      min-width: ${props.$minWidth}px;
+    `
+    : css`
+      min-width: 100%;
+    `
+  }
+  padding: 16.5px;
+  border-radius: ${(props) => props.theme.borderRadius.button};
   font-size: 18px;
   line-height: 27px;
   font-weight: 700;
   color: ${(props) => props.theme.txtColor.contrast};
-  background: ${(props) => props.theme.buttonBgColor.default};
-  transition: all 0.3s ease-out;
   &:hover {
-    background: ${(props) => props.theme.buttonBgColor.action};
-    box-shadow: 0 4px 0 0  ${(props) => props.theme.buttonBgColor.shadow} inset;
-  };
+    box-shadow: 0 4px 0 0  ${(props) => props.theme.buttonColor.shadow} inset;
+  }
   &:active {
-    background: ${(props) => props.theme.buttonBgColor.action};
     box-shadow: none;
   }
   &:disabled {
@@ -25,4 +59,38 @@ const StyledButton = styled.button`
   }
 `;
 
-export { StyledButton };
+const StyledSliderButton = styled.button`
+  ${BasicButton};
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+`;
+
+const StyledCloseButton = styled.button`
+  ${BasicButton};
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 ${(props) => props.theme.borderRadius.main} 0 50%;
+  img {
+    width: 15px;
+    height: auto;
+  }
+`;
+
+export {
+  StyledButton,
+  StyledSliderButton,
+  StyledCloseButton,
+  AccordionButton,
+};

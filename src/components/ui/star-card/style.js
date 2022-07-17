@@ -4,12 +4,12 @@ import Title from "../title/title";
 
 const StyledCard = styled.article`
 width:353px;
-height: 100%;
+min-height: 525px;
 padding: ${(props)=>props.theme.indent};
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-border-radius: ${(props)=>props.theme.borderRadius};
+border-radius: ${(props)=>props.theme.borderRadius.main};
 background: ${(props)=>props.theme.bgColor.contrast};
 transition: all 0.3s ease-in;
 &:hover{
@@ -22,19 +22,17 @@ transition: all 0.3s ease-in;
 }
 `;
 
-const StyledCardImageBlock = styled.div`
+const ImageBlock = styled.div`
+  height: 313px;
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
-  border-radius: ${(props)=>props.theme.borderRadius};
+  border-radius: ${(props)=>props.theme.borderRadius.main};
   picture {
-    width: 100%;
+    width: 313px;
     height: 313px;
     object-fit: contain;
   }
-`;
-
-const ImageBlock = styled(StyledCardImageBlock)`
-  margin-bottom: 20px;
 `;
 
 const CardTitle = styled(Title)`

@@ -1,11 +1,18 @@
-import Button from "../../ui/button/button";
+import React from 'react';
+
+import { navButtons } from '../../../mocks/nav-buttons.js';
+import { useLocation } from 'react-router-dom';
 
 function Nav() {
-  return (
-    <nav>
-      <Button minWidth={260}>Купить билет</Button>
-    </nav>
-  );
+	const pageUrl = useLocation().pathname;
+
+	return (
+		<nav>
+			{navButtons
+				.filter((button) => button.to !== pageUrl)
+				.map((button) => button.button)}
+		</nav>
+	);
 }
 
 export default Nav;

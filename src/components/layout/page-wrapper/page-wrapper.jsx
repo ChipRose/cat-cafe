@@ -1,16 +1,21 @@
-import Header from "../header/header";
-import MainPage from "../../pages/main-page/main-page";
-import Footer from "../footer/footer";
+import React from 'react';
+import {Outlet} from 'react-router-dom';
+
+import Header from '../header/header.jsx';
+import Footer from '../footer/footer.jsx';
+
+import { StyledPage } from './style.js';
 
 function PageWrapper() {
-
-  return (
-    <>
-      <Header />
-      <MainPage />
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Header />
+			<StyledPage>
+        <Outlet/>
+			</StyledPage>
+			<Footer />
+		</>
+	);
 }
 
 export default PageWrapper;
