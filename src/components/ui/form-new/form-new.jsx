@@ -8,7 +8,7 @@ import {
 	StyledFormWrapper,
 	StyledForm,
 	InputBlock,
-  ButtonsBlock,
+	ButtonsBlock,
 	StyledNameInput,
 	NewFormTextarea,
 } from './style.js';
@@ -20,13 +20,12 @@ function FormNew({ isShow, onClose }) {
 	const [aboutText, setAboutText] = useState('');
 	const [dataPublish, setData] = useState(new Date());
 
-	const handlerEsc = (evt) => {
-		if (evt.key === 'Escape') {
-			onClose && onClose();
-		}
-	};
-
-	useEffect(() => {
+	useEffect((onClose) => {
+		const handlerEsc = (evt) => {
+			if (evt.key === 'Escape') {
+				onClose && onClose();
+			}
+		};
 		document.addEventListener('keydown', handlerEsc);
 		return () => {
 			document.removeEventListener('keydown', handlerEsc);
@@ -73,11 +72,7 @@ function FormNew({ isShow, onClose }) {
 					/>
 				</InputBlock>
 				<ButtonsBlock>
-					<Button
-						type="submit"
-						disabled={!isButtonEnable}
-						$minWidth={260}
-					>
+					<Button type="submit" disabled={!isButtonEnable} $minWidth={260}>
 						{'Сохранить'}
 					</Button>
 					<Button type="button" onClick={onClose} $minWidth={260}>

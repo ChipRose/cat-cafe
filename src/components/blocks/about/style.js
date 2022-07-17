@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import Title from "../../ui/title/title";
-
 const AboutContainer = styled.div`
   width: ${(props)=>props.theme.appWidth};
   padding: 77px ${(props)=>props.theme.indent};
