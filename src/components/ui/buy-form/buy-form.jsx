@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Fieldset, TimeControl, TypeControl } from '../../styled';
-import { useOptionsContext } from '../../../context/stars-context.js';
+import { useOptionsContext } from '../../../context/buy-options-hook.js';
 
 import Accordion from '../accordion/accordion';
 import Button from '../button/button.jsx';
@@ -17,17 +17,18 @@ import {
 } from './style.js';
 
 function BuyForm() {
-	const { durationOptions, ticketOptions } = useOptionsContext();
-	const [duration, setDuration] = useState(durationOptions[0]);
-	const [selectType, setSelectType] = useState(ticketOptions[0].id);
 	const [showMessage, setShowMessage] = useState(false);
-
-	const ticketAvailability = durationOptions.length && ticketOptions.length;
-
-	const priceType = ticketOptions.find(
-		(option) => option.id === Number(selectType)
-	);
-	const price = priceType.price * duration;
+	const {
+		durationOptions,
+		ticketOptions,
+		ticketAvailability,
+		duration,
+		HandlerDurationSelect,
+		selectType,
+		HandlerTypeSelect,
+		priceType,
+		price,
+	} = useOptionsContext();
 
 	const AccordionContent =
 		ticketAvailability &&
@@ -40,9 +41,7 @@ function BuyForm() {
 					selectValue={selectType}
 					value={option.id}
 					name={'ticket-type'}
-					onChange={(evt) => {
-						setSelectType(evt.target.value);
-					}}
+					onChange={HandlerTypeSelect}
 				>
 					{option.title}
 				</ControlButton>
@@ -63,7 +62,7 @@ function BuyForm() {
 						{'Продолжительность (часов)'}
 					</StyledLegend>
 					<StyledDurationList>
-						{durationOptions &&
+						{durationOptions.length &&
 							durationOptions.map((option) => (
 								<li key={option}>
 									<ControlButton
@@ -72,7 +71,7 @@ function BuyForm() {
 										value={option}
 										selectValue={duration}
 										name={'duration'}
-										onChange={(evt) => setDuration(evt.target.value)}
+										onChange={HandlerDurationSelect}
 									>
 										{option}
 									</ControlButton>

@@ -1,6 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import SwiperCore, { Virtual, Navigation } from 'swiper';
 import { SwiperSlide } from 'swiper/react';
+
+import { useInfoGallery } from '../../../context/gallery-hook.js';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -19,15 +21,10 @@ import {
 SwiperCore.use([Virtual]);
 
 function Slider({ slides }) {
-	const [swiperRef, setSwiperRef] = useState(null);
-	const [activeSlide, setActiveSlide] = useState(0);
-
+  const { activeSlide, setActiveSlide, setSwiperRef, slideTo} = useInfoGallery();
+	
 	const navigationPrevRef = useRef(null);
 	const navigationNextRef = useRef(null);
-
-	const slideTo = (index) => {
-		swiperRef.slideTo(index, 0);
-	};
 
 	return (
 		<>

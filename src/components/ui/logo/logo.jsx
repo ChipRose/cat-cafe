@@ -1,6 +1,7 @@
 import React from 'react';
 
 import logo from "../../../assets/logo.svg";
+import { AppRoute } from '../../../mocks/const';
 
 import {
   StyledLogo,
@@ -10,7 +11,7 @@ import {
 
 function Logo() {
   return (
-    <StyledLogo href="/">
+    <StyledLogo to={AppRoute.MAIN}>
       <StyledImg src={logo} alt="логотип" />
       <StyledText>Котокафе</StyledText>
     </StyledLogo>

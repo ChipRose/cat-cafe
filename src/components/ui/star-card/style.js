@@ -4,7 +4,7 @@ import Title from "../title/title";
 
 const StyledCard = styled.article`
 width:353px;
-height: 100%;
+min-height: 525px;
 padding: ${(props)=>props.theme.indent};
 box-sizing: border-box;
 display: flex;
@@ -29,8 +29,8 @@ const ImageBlock = styled.div`
   overflow: hidden;
   border-radius: ${(props)=>props.theme.borderRadius.main};
   picture {
-    width: 100%;
-    height: auto;
+    width: 313px;
+    height: 313px;
     object-fit: contain;
   }
 `;

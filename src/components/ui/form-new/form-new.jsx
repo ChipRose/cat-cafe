@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import InputImage from '../input-image/input-image';
-import { useInfoStars } from '../../../context/stars-context';
-import Button from '../button/button';
+import { useStars } from '../../../context/stars-hook.js';
+import Button from '../button/button.jsx';
 
 import {
 	StyledFormWrapper,
@@ -11,10 +11,10 @@ import {
   ButtonsBlock,
 	StyledNameInput,
 	NewFormTextarea,
-} from './style';
+} from './style.js';
 
 function FormNew({ isShow, onClose }) {
-	const { addCard } = useInfoStars();
+	const { addCard } = useStars();
 	const [starPhoto, setStarPhoto] = useState('');
 	const [starName, setStarName] = useState('');
 	const [aboutText, setAboutText] = useState('');

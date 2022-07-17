@@ -1,28 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react';
 
 import starsData from '../mocks/stars-data.js';
-import galleryData from '../mocks/gallery-data.js';
-import buyOptions from '../mocks/buy-options.js';
 
 const StarContext = React.createContext();
 
-const useInfoStars = () => {
+const useStars = () => {
   return useContext(StarContext);
 };
 
-const GalleryContext = React.createContext();
-
-const useInfoGallery = () => {
-  return useContext(GalleryContext);
-};
-
-const BuyOptionsContext = React.createContext();
-
-const useOptionsContext = () => {
-  return useContext(BuyOptionsContext);
-};
-
-function Provider({ children }) {
+function StarsProvider({ children }) {
   const DOWNLOAD_DELAY = 1000;
 
   const [stars, setStars] = useState('');
@@ -32,7 +18,7 @@ function Provider({ children }) {
       setStars(starsData);
     }, DOWNLOAD_DELAY);
     return () => clearTimeout(timer);
-  },[]);
+  }, []);
 
   const addCard = (star) => {
     const { starName, aboutText, starPhoto, dataPublish, catFeature } = star;
@@ -54,13 +40,9 @@ function Provider({ children }) {
       starsInfo: stars,
       addCard
     }}>
-      <GalleryContext.Provider value={galleryData}>
-        <BuyOptionsContext.Provider value={buyOptions}>
-          {children}
-        </BuyOptionsContext.Provider>
-      </GalleryContext.Provider>
+      {children}
     </StarContext.Provider>
   );
 };
 
-export { Provider, useInfoStars, useInfoGallery, useOptionsContext };
+export { StarsProvider, useStars };
