@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 function Nav() {
 	const pageUrl = useLocation().pathname;
-  console.log(pageUrl,navButtons);
 
 	return (
 		<nav>
