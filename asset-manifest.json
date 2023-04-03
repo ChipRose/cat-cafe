@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cat-cafe/static/css/main.04276c89.css",
-    "main.js": "/cat-cafe/static/js/main.5a51aaee.js",
+    "main.js": "/cat-cafe/static/js/main.b770bb64.js",
     "static/media/in-a-chair.svg": "/cat-cafe/static/media/in-a-chair.181c8fd1c13e4584d9c81535543a722c.svg",
     "static/media/cat.svg": "/cat-cafe/static/media/cat.c32c9285d132198e560588da817211b6.svg",
     "static/media/doc.svg": "/cat-cafe/static/media/doc.d4b6ce7d35a4a42495759baa0a5867c3.svg",
@@ -14,10 +14,10 @@
     "index.html": "/cat-cafe/index.html",
     "static/media/arrow.svg": "/cat-cafe/static/media/arrow.42a1b404fe7fa9cd73a8da1d70fd90b3.svg",
     "main.04276c89.css.map": "/cat-cafe/static/css/main.04276c89.css.map",
-    "main.5a51aaee.js.map": "/cat-cafe/static/js/main.5a51aaee.js.map"
+    "main.b770bb64.js.map": "/cat-cafe/static/js/main.b770bb64.js.map"
   },
   "entrypoints": [
     "static/css/main.04276c89.css",
-    "static/js/main.5a51aaee.js"
+    "static/js/main.b770bb64.js"
   ]
 }
