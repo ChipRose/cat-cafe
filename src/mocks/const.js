@@ -1,6 +1,6 @@
 const AppRoute = {
-  MAIN: "/cat-cafe",
-  BUY: "/cat-cafe/buy",
+  MAIN: "/",
+  BUY: "/buy",
 }
 
 export {AppRoute};
