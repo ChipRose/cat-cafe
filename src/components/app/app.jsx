@@ -23,7 +23,7 @@ function App() {
 				<GalleryProvider>
 					<BuyOptionsProvider>
 						<GlobalStyle />
-						<BrowserRouter>
+						<BrowserRouter basename="/cat-cafe">
 							<ScrollToTop />
 							<Routes>
 								<Route path={AppRoute.MAIN} element={<PageWrapper />}>
